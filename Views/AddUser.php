@@ -12,8 +12,20 @@
 <body>
 
 <div class="container">
-  <h2>CONNEXION :</h2>
-  <form class="form-horizontal" action="login.php" method="post">
+  <h2>AJOUTER UN UTILISATEUR :</h2>
+  <form class="form-horizontal" action="add_user" method="post">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="nom">Nom :</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom" name="nom">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="prenom">Prénom :</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="prenom" placeholder="Entrez votre prénom" name="prenom">
+      </div>
+    </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Adresse email :</label>
       <div class="col-sm-10">
@@ -23,19 +35,12 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Mot de passe :</label>
       <div class="col-sm-10">
-        <input type="password" class="form-control" id="pwd" placeholder="Entrez votre mot de passe" name="pwd">
+        <input type="password" class="form-control" id="mdp" placeholder="Entrez votre mot de passe" name="mdp">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Se souvenir de moi </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Se connecter</button>
+        <button type="submit" class="btn btn-default" name="adduser">Ajouter</button>
       </div>
     </div>
   </form>
