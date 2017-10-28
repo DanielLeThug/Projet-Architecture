@@ -19,7 +19,7 @@ class AddUser extends Controller {
 
               if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-                self::query('INSERT INTO utilisateurs VALUES (\'\', \'\', :nom, :prenom, :email, :mdp)', array(':nom'=>$nom, ':prenom'=>$prenom, ':email'=>$email, ':mdp'=>$mdp));
+                self::query('INSERT INTO utilisateurs VALUES (\'\', \'\', :nom, :prenom, :email, :mdp)', array(':nom'=>$nom, ':prenom'=>$prenom, ':email'=>$email, ':mdp'=>password_hash($mdp, PASSWORD_BCRYPT)));
                 echo "Utilisateur ajouté.";
               } else {
                 echo "Adresse email invalide.";
