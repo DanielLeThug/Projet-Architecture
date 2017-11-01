@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 28 oct. 2017 à 13:35
+-- Généré le :  mer. 01 nov. 2017 à 13:02
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -25,13 +25,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bâtiment`
+-- Structure de la table `batiments`
 --
 
-CREATE TABLE `bâtiment` (
+CREATE TABLE `batiments` (
   `ID` int(32) NOT NULL,
   `LIBELLÉ` char(32) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -42,79 +42,99 @@ CREATE TABLE `bâtiment` (
 CREATE TABLE `concerne` (
   `ID_FORMATION` int(32) NOT NULL,
   `ID_MATIERE` int(32) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `date_de_cours`
+-- Structure de la table `cookies`
 --
 
-CREATE TABLE `date_de_cours` (
+CREATE TABLE `cookies` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `token` char(64) NOT NULL,
+  `user_id` int(11) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `cookies`
+--
+
+INSERT INTO `cookies` (`id`, `token`, `user_id`) VALUES
+(1, '4606c8c4d5ee52767ca9fa2dff6435467af75e3b', 1),
+(2, 'da9620bb1ceb40283eff9436cfa2ca56d3427c10', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `dates_de_cours`
+--
+
+CREATE TABLE `dates_de_cours` (
   `ID` int(32) NOT NULL,
   `DATE_C` date DEFAULT NULL,
   `HEURE` time(6) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `document_administratif`
+-- Structure de la table `documents_administratifs`
 --
 
-CREATE TABLE `document_administratif` (
+CREATE TABLE `documents_administratifs` (
   `ID` int(32) NOT NULL,
   `LIBELLÉ` char(32) DEFAULT NULL,
   `ID_VACATAIRE` int(32) DEFAULT NULL,
   `ID_RESPONSABLE_ADMINISTRATIF` int(32) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `formation`
+-- Structure de la table `formations`
 --
 
-CREATE TABLE `formation` (
+CREATE TABLE `formations` (
   `ID` int(32) NOT NULL,
   `LIBELLÉ` char(32) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `matière`
+-- Structure de la table `matieres`
 --
 
-CREATE TABLE `matière` (
+CREATE TABLE `matieres` (
   `ID` int(32) NOT NULL,
   `LIBELLÉ` char(32) DEFAULT NULL,
   `ID_TYPE_DE_COURS` int(32) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `salle`
+-- Structure de la table `salles`
 --
 
-CREATE TABLE `salle` (
+CREATE TABLE `salles` (
   `ID` int(32) NOT NULL,
   `LIBELLÉ` char(32) DEFAULT NULL,
   `ID_BATIMENT` int(32) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `type_de_cours`
+-- Structure de la table `types_de_cours`
 --
 
-CREATE TABLE `type_de_cours` (
+CREATE TABLE `types_de_cours` (
   `ID` int(32) NOT NULL,
   `LIBELLÉ` char(32) DEFAULT NULL,
   `TARIF_HORAIRE` double(32,0) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -129,23 +149,23 @@ CREATE TABLE `utilisateurs` (
   `prenom` varchar(32) DEFAULT NULL,
   `email` text,
   `mdp` varchar(60) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`id`, `profil`, `nom`, `prenom`, `email`, `mdp`) VALUES
-(1, 0, 'fezfez\'', 'fezfee', 'daniel.wettel@gmail.com', 'dfezgfezgez'),
-(2, 0, 'Jeean-Jean', 'Daniel', 'goldennoob68@gmail.com', 'gzeezgzeg');
+(1, 0, 'Wettel', 'Daniel', 'daniel.wettel@gmail.com', '$2y$10$p1FRBukpd/mfCZWTq4sZaeFuGZDp.Edp4N1dP6kMbneOctCjRuDsS'),
+(2, NULL, 'Wettel', 'Daniel', 'goldennoob68@gmail.com', '$2y$10$F6LQkjxcRNil2Hk2Vu27nuKjxx6TqevoaUA2hOL0m7/b2hvtP.jPe');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `virement`
+-- Structure de la table `virements`
 --
 
-CREATE TABLE `virement` (
+CREATE TABLE `virements` (
   `ID` char(32) NOT NULL,
   `DATE_V` char(32) DEFAULT NULL,
   `EFFECTUÉ` char(32) DEFAULT NULL,
@@ -154,16 +174,16 @@ CREATE TABLE `virement` (
   `ID_SALLE` int(32) DEFAULT NULL,
   `ID_RESPONSABLE_FINANCIER` int(32) DEFAULT NULL,
   `ID_VACATAIRE` int(32) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `bâtiment`
+-- Index pour la table `batiments`
 --
-ALTER TABLE `bâtiment`
+ALTER TABLE `batiments`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -174,43 +194,52 @@ ALTER TABLE `concerne`
   ADD KEY `ID_MATIERE` (`ID_MATIERE`);
 
 --
--- Index pour la table `date_de_cours`
+-- Index pour la table `cookies`
 --
-ALTER TABLE `date_de_cours`
+ALTER TABLE `cookies`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `token` (`token`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Index pour la table `dates_de_cours`
+--
+ALTER TABLE `dates_de_cours`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `document_administratif`
+-- Index pour la table `documents_administratifs`
 --
-ALTER TABLE `document_administratif`
+ALTER TABLE `documents_administratifs`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID_VACATAIRE` (`ID_VACATAIRE`),
   ADD KEY `ID_RESPONSABLE_ADMINISTRATIF` (`ID_RESPONSABLE_ADMINISTRATIF`);
 
 --
--- Index pour la table `formation`
+-- Index pour la table `formations`
 --
-ALTER TABLE `formation`
+ALTER TABLE `formations`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `matière`
+-- Index pour la table `matieres`
 --
-ALTER TABLE `matière`
+ALTER TABLE `matieres`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID_TYPE_DE_COURS` (`ID_TYPE_DE_COURS`);
 
 --
--- Index pour la table `salle`
+-- Index pour la table `salles`
 --
-ALTER TABLE `salle`
+ALTER TABLE `salles`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID_BATIMENT` (`ID_BATIMENT`);
 
 --
--- Index pour la table `type_de_cours`
+-- Index pour la table `types_de_cours`
 --
-ALTER TABLE `type_de_cours`
+ALTER TABLE `types_de_cours`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -220,9 +249,9 @@ ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `virement`
+-- Index pour la table `virements`
 --
-ALTER TABLE `virement`
+ALTER TABLE `virements`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID_MATIERE` (`ID_MATIERE`),
   ADD KEY `ID_DATE_COURS` (`ID_DATE_COURS`),
@@ -235,45 +264,51 @@ ALTER TABLE `virement`
 --
 
 --
--- AUTO_INCREMENT pour la table `bâtiment`
+-- AUTO_INCREMENT pour la table `batiments`
 --
-ALTER TABLE `bâtiment`
+ALTER TABLE `batiments`
   MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `date_de_cours`
+-- AUTO_INCREMENT pour la table `cookies`
 --
-ALTER TABLE `date_de_cours`
+ALTER TABLE `cookies`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `dates_de_cours`
+--
+ALTER TABLE `dates_de_cours`
   MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `document_administratif`
+-- AUTO_INCREMENT pour la table `documents_administratifs`
 --
-ALTER TABLE `document_administratif`
+ALTER TABLE `documents_administratifs`
   MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `formation`
+-- AUTO_INCREMENT pour la table `formations`
 --
-ALTER TABLE `formation`
+ALTER TABLE `formations`
   MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `matière`
+-- AUTO_INCREMENT pour la table `matieres`
 --
-ALTER TABLE `matière`
+ALTER TABLE `matieres`
   MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `salle`
+-- AUTO_INCREMENT pour la table `salles`
 --
-ALTER TABLE `salle`
+ALTER TABLE `salles`
   MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `type_de_cours`
+-- AUTO_INCREMENT pour la table `types_de_cours`
 --
-ALTER TABLE `type_de_cours`
+ALTER TABLE `types_de_cours`
   MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
 
 --
@@ -281,6 +316,16 @@ ALTER TABLE `type_de_cours`
 --
 ALTER TABLE `utilisateurs`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `cookies`
+--
+ALTER TABLE `cookies`
+  ADD CONSTRAINT `cookies_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `utilisateurs` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

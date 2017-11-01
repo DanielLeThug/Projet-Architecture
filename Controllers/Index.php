@@ -2,9 +2,9 @@
 
 class Index extends Controller {
 
-  public static function doSomething() {
+    public static function doSomething() {
 
-  }
+    }
 
 }
 
