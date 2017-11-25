@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller {
+class Login_C extends Controller {
 
     public static function doSomething() {
 
@@ -8,15 +8,15 @@ class Login extends Controller {
             $email = $_POST['email'];
             $mdp = $_POST['mdp'];
 
-            if (self::query('SELECT email FROM utilisateurs WHERE email=:email', array(':email'=>$email))) {
+            if (Login_M::getEmail($email)) {
 
-                if (password_verify($mdp, self::query('SELECT mdp FROM utilisateurs WHERE email=:email', array(':email'=>$email))[0]['mdp'])) {
+                if (password_verify($mdp, Login_M::getMdp($email))) {
                     echo "Vous êtes connecté !";
                     $cstrong = True;
                     $token = bin2hex(openssl_random_pseudo_bytes(64, $cstrong));
-                    $user_id = self::query('SELECT id FROM utilisateurs WHERE email=:email', array(':email'=>$email))[0]['id'];
+                    $user_id = Login_M::getId($email);
                     // sha1 hash le token pour plus de sécurité
-                    self::query('INSERT INTO cookies VALUES (null, :token, :user_id)', array(':token'=>sha1($token), ':user_id'=>$user_id));
+                    Login_M::addCookie($token, $user_id);
                     // cookie valide une semaine sur tout le site
                     setcookie("PAID", $token, time() + 60 * 60 * 24 * 7, '/', NULL, NULL, TRUE);
 

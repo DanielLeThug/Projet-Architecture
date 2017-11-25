@@ -1,6 +1,6 @@
 <?php
 
-class Index extends Controller {
+class Index_C extends Controller {
 
     public static function doSomething() {
 

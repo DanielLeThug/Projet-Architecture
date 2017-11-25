@@ -15,8 +15,8 @@
         <h2>Bienvenue !</h2>
         Que souhaitez-vous faire ?
         <ul>
-            <li><a href="http://localhost/Projet-Architecture/add_user">Ajouter un utilisateur</a></li>
-            <li><a href="http://localhost/Projet-Architecture/login">Se connecter</a></li>
+            <li><a href="add_user">Ajouter un utilisateur</a></li>
+            <li><a href="login">Se connecter</a></li>
         </ul>
     </div>
 

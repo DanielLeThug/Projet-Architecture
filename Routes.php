@@ -1,19 +1,19 @@
 <?php
 
 Route::set('add_user', function() {
-    AddUser::CreateView('AddUser');
+    AddUser_C::CreateView('AddUser_V');
 });
 
 Route::set('index.php', function() {
-    Index::CreateView('Index');
+    Index_C::CreateView('Index_V');
 });
 
 Route::set('login', function() {
-    Login::CreateView('Login');
+    Login_C::CreateView('Login_V');
 });
 
 Route::set('logout', function() {
-    Logout::CreateView('Logout');
+    Logout_C::CreateView('Logout_V');
 });
 
 ?>

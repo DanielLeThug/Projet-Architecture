@@ -1,6 +1,6 @@
 <?php
 
-class AddUser extends Controller {
+class AddUser_C extends Controller {
 
     public static function doSomething() {
         if (isset($_POST['adduser'])) {
@@ -9,7 +9,7 @@ class AddUser extends Controller {
             $email = $_POST['email'];
             $mdp = $_POST['mdp'];
 
-            if (!self::query('SELECT email FROM utilisateurs WHERE email=:email', array(':email'=>$email))) {
+            if (!AddUser_M::getEmail($email)) {
 
                 if (strlen($nom) >= 3 && strlen($nom) <= 32 && strlen($prenom) >= 3 && strlen($prenom) <= 32) {
 
@@ -19,7 +19,7 @@ class AddUser extends Controller {
 
                             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-                                self::query('INSERT INTO utilisateurs VALUES (null, null, :nom, :prenom, :email, :mdp)', array(':nom'=>$nom, ':prenom'=>$prenom, ':email'=>$email, ':mdp'=>password_hash($mdp, PASSWORD_BCRYPT)));
+                                AddUser_M::addUser($nom, $prenom, $email, $mdp);
                                 echo "Utilisateur ajouté.";
                             } else {
                                 echo "Adresse email invalide.";
