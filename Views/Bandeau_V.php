@@ -10,26 +10,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-		<?php include 'Bandeau_V.php'?>
-        <h2>Bienvenue !</h2>
-        Que souhaitez-vous faire ?
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="collapse navbar-collapse" id="oNavigation">
-				<ul class="nav navbar-nav">
-					<li>Menu</li>
-					<li class="dropdown">
-						<ul class="dropdown-menu">
-							<li><a href="add_lesson">Ajouter un cours</a></li>
-						</ul>
-						<ul class="dropdown-menu">
-							<li><a href="view_lesson">Voir les cours</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-
+	<nav class="navbar navbar-light">
+		<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li> <a href="index.php">Accueil</a> </li>
+			<li> <a href="login">Connexion</a> </li>
+			<li> <a href="add_user">S'enregistrer</a> </li>
+			<li> <a href="logout">Se déconnecter</a> </li>
+		</ul>
+		</div>
+	</nav>
 </body>
 </html>

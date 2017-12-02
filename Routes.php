@@ -16,4 +16,11 @@ Route::set('logout', function() {
     Logout_C::CreateView('Logout_V');
 });
 
+Route::set('view_lesson', function() {
+    Logout_C::CreateView('ViewLesson_V');
+});
+
+Route::set('add_lesson', function() {
+    Logout_C::CreateView('AddLesson_V');
+});
 ?>
