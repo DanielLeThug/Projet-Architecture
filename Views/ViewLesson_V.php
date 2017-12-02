@@ -14,6 +14,7 @@
 <body>
 	<div class="container">
 		<?php include 'Bandeau_V.php'?>
+		<h1>WORK IN PROGRESS</h1>
 		<h2>LISTE DES COURS :</h2>
 		<table class="table">
 			<thead>
