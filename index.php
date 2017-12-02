@@ -12,9 +12,9 @@ function __autoload($class_name) {
 
 }
 
-if (Login_C::isLoggedIn()) {
+if (Controller::isLoggedIn()) {
     echo "Connecté ! ";
-    echo Login_C::isLoggedIn();
+    echo Controller::isLoggedIn();
 } else {
     echo "Pas Connecté !";
 }

@@ -1,7 +1,7 @@
 <?php
 
 Route::set('add_user', function() {
-    AddUser_C::CreateView('AddUser_V');
+    AddUser_C::CreatePrivateView('AddUser_V');
 });
 
 Route::set('index.php', function() {
@@ -23,4 +23,5 @@ Route::set('view_lesson', function() {
 Route::set('add_lesson', function() {
     AddLesson_C::CreateView('AddLesson_V');
 });
+
 ?>

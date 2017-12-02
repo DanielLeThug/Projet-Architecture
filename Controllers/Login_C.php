@@ -34,32 +34,6 @@ class Login_C extends Controller {
 
     }
 
-    public static function isLoggedIn() {
-
-        if (isset($_COOKIE['PAID'])) {
-            if (Login_M::checkCookie(sha1($_COOKIE['PAID']))) {
-                $userid = Login_M::getCookieUserId(sha1($_COOKIE['PAID']));
-
-                // Si le cookie de 3 jours a expiré on en créé un nouveau et on efface l'ancien
-                if (isset($_COOKIE['PAID_'])) {
-                    return $userid;
-                } else {
-                    $cstrong = True;
-                    $token = bin2hex(openssl_random_pseudo_bytes(64, $cstrong));
-                    Login_M::addCookie(sha1($token), $userid);
-                    Login_M::deleteCookie(sha1($_COOKIE['PAID']));
-
-                    setcookie("PAID", $token, time() + 60 * 60 * 24 * 7, '/', NULL, NULL, TRUE);
-                    setcookie("PAID_", '1', time() + 60 * 60 * 24 * 3, '/', NULL, NULL, TRUE);
-
-                    return $userid;
-                }
-            }
-        }
-
-        return false;
-    }
-
 }
 
 ?>
