@@ -11,26 +11,28 @@
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;" >
-		<div class="container-fluid">
-		<ul class="nav navbar-nav">
-			<li> <a href="index.php">Accueil</a> </li>
-			<li> <a href="login">Connexion</a> </li>
-			<li> <a href="add_user">S'enregistrer</a> </li> 
-			<div class="btn-group">
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Menu des cours
-				<span class="caret"></span></button>
-				
-				<ul class="dropdown-menu" role="menu">
-					<li><a href="add_lesson">Ajouter un cours</a></li>
-					<li><a href="view_lesson">Voir les cours</a></li>
-				</ul>
+        <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li> <a href="index.php">Accueil</a> </li>
+            <li><div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Menu des cours
+                <span class="caret"></span></button>
+                
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="add_lesson">Ajouter un cours</a></li>
+                    <li><a href="view_lesson">Voir les cours</a></li>
+                </ul>
 
-			</div>
-			<li> <a href="logout">Se déconnecter</a> </li>
-		</ul>
-		</div>
-	  <!-- Navbar content -->
-	</nav>
+            </div>
+        
+                <li> <a href="login">Connexion</a> </li>
+                <li> <a href="add_user">S'enregistrer</a> </li> 
+                <li> <a href="logout">Se déconnecter</a> </li>
+            </ul>
+        </form>
+        </div>
+      <!-- Navbar content -->
+    </nav>
 
 </body>
 </html>
