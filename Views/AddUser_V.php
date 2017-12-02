@@ -48,6 +48,7 @@
 					<option>Responsable Administratif de formation
 					<option>Responsable Financier
 					<option>Vacataire
+					</select>
 				</div>
             </div>
             <div class="form-group">
