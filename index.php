@@ -11,4 +11,15 @@ function __autoload($class_name) {
     }
 
 }
+
+if (Login_C::isLoggedIn()) {
+    echo "Connecté ! ";
+    echo Login_C::isLoggedIn();
+} else {
+    echo "Pas Connecté !";
+}
+
+if (!in_array($_GET['url'], Route::$validRoutes)) {
+    require_once("./Views/404_V.php");
+}
 ?>

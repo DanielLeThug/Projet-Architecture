@@ -11,7 +11,15 @@ class Login_M extends Model {
     }
 
     public static function addCookie($token, $user_id) {
-        self::query('INSERT INTO cookies VALUES (null, :token, :user_id)', array(':token'=>sha1($token), ':user_id'=>$user_id));
+        self::query('INSERT INTO cookies VALUES (null, :token, :user_id)', array(':token'=>$token, ':user_id'=>$user_id));
+    }
+
+    public static function checkCookie($token) {
+        return self::query('SELECT user_id FROM cookies WHERE token=:token', array(':token'=>$token));
+    }
+
+    public static function getCookieUserId($token) {
+        return self::query('SELECT user_id FROM cookies WHERE token=:token', array(':token'=>$token))[0]['user_id'];
     }
 
 }
