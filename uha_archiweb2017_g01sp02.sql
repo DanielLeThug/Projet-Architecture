@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 02 déc. 2017 à 19:55
+-- Généré le :  sam. 02 déc. 2017 à 20:24
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -55,14 +55,6 @@ CREATE TABLE `cookies` (
   `token` char(64) NOT NULL,
   `user_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `cookies`
---
-
-INSERT INTO `cookies` (`id`, `token`, `user_id`) VALUES
-(3, '8a4ca7c7470b1bcc1eac1ada18d04a506733c8e6', 5),
-(11, 'b3de7c44b27a53cbc53fabb9b757b55893476ee0', 5);
 
 -- --------------------------------------------------------
 
@@ -156,7 +148,7 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `profil`, `nom`, `prenom`, `email`, `mdp`) VALUES
-(5, NULL, 'Wettel', 'Daniel', 'daniel.wettel@gmail.com', '$2y$10$e1PBO2UT64g7CT7b7HFhnOGs2gvTD1F1xhJbnQi.RlRTLqgpxDO2W');
+(6, NULL, 'Gates', 'Bill', 'admin@root.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
 
 -- --------------------------------------------------------
 
@@ -314,7 +306,7 @@ ALTER TABLE `types_de_cours`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Contraintes pour les tables déchargées
