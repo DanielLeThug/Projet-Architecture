@@ -14,21 +14,6 @@
 		<?php include 'Bandeau_V.php'?>
         <h2>Bienvenue !</h2>
         Que souhaitez-vous faire ?
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="collapse navbar-collapse" id="oNavigation">
-				<ul class="nav navbar-nav">
-					<li>Menu</li>
-					<li class="dropdown">
-						<ul class="dropdown-menu">
-							<li><a href="add_lesson">Ajouter un cours</a></li>
-						</ul>
-						<ul class="dropdown-menu">
-							<li><a href="view_lesson">Voir les cours</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</nav>
 	</div>
 
 </body>

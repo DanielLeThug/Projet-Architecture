@@ -17,6 +17,15 @@
 			<li> <a href="login">Connexion</a> </li>
 			<li> <a href="add_user">S'enregistrer</a> </li>
 			<li> <a href="logout">Se déconnecter</a> </li>
+			<li>Menu des cours</li>
+			<li class="dropdown">
+				<ul class="dropdown-menu">
+					<li><a href="add_lesson">Ajouter un cours</a></li>
+				</ul>
+				<ul class="dropdown-menu">
+					<li><a href="view_lesson">Voir les cours</a></li>
+				</ul>
+			</li>
 		</ul>
 		</div>
 	</nav>
