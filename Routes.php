@@ -17,10 +17,10 @@ Route::set('logout', function() {
 });
 
 Route::set('view_lesson', function() {
-    Logout_C::CreateView('ViewLesson_V');
+    ViewLesson_C::CreateView('ViewLesson_V');
 });
 
 Route::set('add_lesson', function() {
-    Logout_C::CreateView('AddLesson_V');
+    AddLesson_C::CreateView('AddLesson_V');
 });
 ?>

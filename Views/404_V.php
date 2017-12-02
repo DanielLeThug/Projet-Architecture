@@ -13,8 +13,7 @@
 	<div class="container">
 		<?php include 'Bandeau_V.php'?>
 		<h1>Erreur 404 : page non trouvé</h1>
-		<h2>Vous allez être rediriger vers la page d'accueil</h2>
-      
+
     </div>
 </body>
 </html>
