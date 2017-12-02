@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mer. 01 nov. 2017 à 13:02
+-- Généré le :  sam. 02 déc. 2017 à 19:55
 -- Version du serveur :  10.1.28-MariaDB
 -- Version de PHP :  7.1.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `projetarchitecture`
+-- Base de données :  `uha_archiweb2017_g01sp02`
 --
 
 -- --------------------------------------------------------
@@ -61,8 +61,8 @@ CREATE TABLE `cookies` (
 --
 
 INSERT INTO `cookies` (`id`, `token`, `user_id`) VALUES
-(1, '4606c8c4d5ee52767ca9fa2dff6435467af75e3b', 1),
-(2, 'da9620bb1ceb40283eff9436cfa2ca56d3427c10', 1);
+(3, '8a4ca7c7470b1bcc1eac1ada18d04a506733c8e6', 5),
+(11, 'b3de7c44b27a53cbc53fabb9b757b55893476ee0', 5);
 
 -- --------------------------------------------------------
 
@@ -156,8 +156,7 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `profil`, `nom`, `prenom`, `email`, `mdp`) VALUES
-(1, 0, 'Wettel', 'Daniel', 'daniel.wettel@gmail.com', '$2y$10$p1FRBukpd/mfCZWTq4sZaeFuGZDp.Edp4N1dP6kMbneOctCjRuDsS'),
-(2, NULL, 'Wettel', 'Daniel', 'goldennoob68@gmail.com', '$2y$10$F6LQkjxcRNil2Hk2Vu27nuKjxx6TqevoaUA2hOL0m7/b2hvtP.jPe');
+(5, NULL, 'Wettel', 'Daniel', 'daniel.wettel@gmail.com', '$2y$10$e1PBO2UT64g7CT7b7HFhnOGs2gvTD1F1xhJbnQi.RlRTLqgpxDO2W');
 
 -- --------------------------------------------------------
 
@@ -273,7 +272,7 @@ ALTER TABLE `batiments`
 -- AUTO_INCREMENT pour la table `cookies`
 --
 ALTER TABLE `cookies`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `dates_de_cours`
@@ -315,7 +314,7 @@ ALTER TABLE `types_de_cours`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Contraintes pour les tables déchargées
