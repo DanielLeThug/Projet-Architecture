@@ -10,32 +10,21 @@
 
 	</head>
 	<body>
-		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;" >
+		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
-					<li>
-						<form class="navbar-form navbar-right inline-form">
-							<ul class="nav navbar-nav">
-								<li><a href="index.php">Accueil</a></li>
-								<li><div class="btn-group">
-									<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Menu des cours<span class="caret"></span></button>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="add_lesson">Ajouter un cours</a></li>
-										<li><a href="view_lesson">Voir les cours</a></li>
-									</ul>
-								</div></li>
-							</ul>
-						</form>
+					<li><a href="index.php">Accueil</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Menu des cours<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="add_lesson">Ajouter un cours</a></li>
+							<li><a href="view_lesson">Voir les cours</a></li>
+						</ul>
 					</li>
-					<li>
-						<form class="navbar-form navbar-right inline-form">
-							<ul class="nav navbar-nav">
-								<li> <a href="login">Connexion</a> </li>
-								<li> <a href="add_user">S'enregistrer</a> </li> 
-								<li> <a href="logout">Se déconnecter</a> </li>
-							</ul>
-						</form>
-					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li> <a href="login">Connexion</a> </li>
+					<li> <a href="add_user">S'enregistrer</a> </li> 
+					<li> <a href="logout">Se déconnecter</a> </li>
 				</ul>
 			</div>
 		  <!-- Navbar content -->
