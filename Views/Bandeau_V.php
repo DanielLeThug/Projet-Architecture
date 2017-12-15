@@ -22,9 +22,17 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li> <a href="login">Connexion</a> </li>
-					<li> <a href="add_user">S'enregistrer</a> </li> 
-					<li> <a href="logout">Se déconnecter</a> </li>
+				<?php 
+					if (!isset($_COOKIE['PAID_']))
+					{
+						echo "<li> <a href='login'><span class='glyphicon glyphicon-log-in'></span> Connexion</a> </li>";
+						echo "<li> <a href='add_user'><span class='glyphicon glyphicon-user'></span> S'enregistrer</a> </li>";
+					}
+					if (isset($_COOKIE['PAID_']))
+					{
+						echo "<li> <a href='logout'><span class='glyphicon glyphicon-log-out'></span> Se déconnecter</a> </li>";
+					}
+				?>
 				</ul>
 			</div>
 		  <!-- Navbar content -->
