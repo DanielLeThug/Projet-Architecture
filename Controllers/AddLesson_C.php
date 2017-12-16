@@ -2,7 +2,8 @@
 
 class AddLesson_C extends Controller {
 
-    public static function doSomething() {/* PROBLEME BDD
+    public static function doSomething() {
+		/* PROBLEME BDD
         if (isset($_POST['addlesson'])) {
 			$intitule = $_POST['intitule']
             $nom = $_POST['date'];

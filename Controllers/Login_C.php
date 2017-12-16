@@ -3,7 +3,6 @@
 class Login_C extends Controller {
 
     public static function doSomething() {
-
         if (isset($_POST['login'])) {
             $email = $_POST['email'];
             $mdp = $_POST['mdp'];

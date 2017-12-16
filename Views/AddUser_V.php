@@ -13,7 +13,6 @@
 </head>
 <body>
     <div class="container">
-		<?php include 'Bandeau_V.php'?>
         <h2>AJOUTER UN UTILISATEUR :</h2>
         <form class="form-horizontal" action="add_user" method="post">
             <div class="form-group">
