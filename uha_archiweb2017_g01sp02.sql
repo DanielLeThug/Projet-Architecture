@@ -1,324 +1,226 @@
--- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
---
--- Hôte : 127.0.0.1
--- Généré le :  sam. 02 déc. 2017 à 20:45
--- Version du serveur :  10.1.28-MariaDB
--- Version de PHP :  7.1.10
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+Source Server         : Local
+Source Server Version : 100128
+Source Host           : localhost:3306
+Source Database       : uha_archiweb2017_g01sp02
 
+Target Server Type    : MYSQL
+Target Server Version : 100128
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+Date: 2018-01-02 17:37:54
+*/
 
---
--- Base de données :  `uha_archiweb2017_g01sp02`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `batiments`
---
-
+-- ----------------------------
+-- Table structure for batiments
+-- ----------------------------
+DROP TABLE IF EXISTS `batiments`;
 CREATE TABLE `batiments` (
-  `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL
+  `ID` int(32) NOT NULL AUTO_INCREMENT,
+  `LIBELLÉ` char(32) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of batiments
+-- ----------------------------
 
---
--- Structure de la table `concerne`
---
-
+-- ----------------------------
+-- Table structure for concerne
+-- ----------------------------
+DROP TABLE IF EXISTS `concerne`;
 CREATE TABLE `concerne` (
   `ID_FORMATION` int(32) NOT NULL,
-  `ID_MATIERE` int(32) NOT NULL
+  `ID_MATIERE` int(32) NOT NULL,
+  PRIMARY KEY (`ID_FORMATION`,`ID_MATIERE`),
+  KEY `ID_MATIERE_CONCERNE` (`ID_MATIERE`),
+  CONSTRAINT `ID_FORMATION_CONCERNE` FOREIGN KEY (`ID_FORMATION`) REFERENCES `formations` (`ID`),
+  CONSTRAINT `ID_MATIERE_CONCERNE` FOREIGN KEY (`ID_MATIERE`) REFERENCES `matieres` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of concerne
+-- ----------------------------
 
---
--- Structure de la table `cookies`
---
-
+-- ----------------------------
+-- Table structure for cookies
+-- ----------------------------
+DROP TABLE IF EXISTS `cookies`;
 CREATE TABLE `cookies` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(32) NOT NULL,
   `token` char(64) NOT NULL,
-  `user_id` int(11) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `user_id` int(32) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`) USING BTREE,
+  UNIQUE KEY `token` (`token`) USING BTREE,
+  UNIQUE KEY `cookies_ibfk_1` (`user_id`) USING BTREE,
+  CONSTRAINT `cookies_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `utilisateurs` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of cookies
+-- ----------------------------
 
---
--- Structure de la table `dates_de_cours`
---
+-- ----------------------------
+-- Table structure for cours
+-- ----------------------------
+DROP TABLE IF EXISTS `cours`;
+CREATE TABLE `cours` (
+  `ID_MATIERE` int(32) NOT NULL,
+  `ID_DATE` int(32) NOT NULL,
+  `ID_SALLE` int(32) NOT NULL,
+  `ID_VACATAIRE` int(32) NOT NULL,
+  `ID_VIREMENT` int(32) DEFAULT NULL,
+  `EFFECTUE` tinyint(4) NOT NULL,
+  PRIMARY KEY (`ID_MATIERE`,`ID_DATE`,`ID_SALLE`,`ID_VACATAIRE`),
+  KEY `ID_DATE_COURS` (`ID_DATE`),
+  KEY `ID_VIREMENT_COURS` (`ID_VIREMENT`),
+  KEY `ID_SALLE_COURS` (`ID_SALLE`),
+  KEY `ID_VACATAIRE_COURS` (`ID_VACATAIRE`),
+  CONSTRAINT `ID_DATE_COURS` FOREIGN KEY (`ID_DATE`) REFERENCES `dates_de_cours` (`ID`),
+  CONSTRAINT `ID_MATIERE_COURS` FOREIGN KEY (`ID_MATIERE`) REFERENCES `matieres` (`ID`),
+  CONSTRAINT `ID_SALLE_COURS` FOREIGN KEY (`ID_SALLE`) REFERENCES `salles` (`ID`),
+  CONSTRAINT `ID_VACATAIRE_COURS` FOREIGN KEY (`ID_VACATAIRE`) REFERENCES `utilisateurs` (`ID`),
+  CONSTRAINT `ID_VIREMENT_COURS` FOREIGN KEY (`ID_VIREMENT`) REFERENCES `virements` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- ----------------------------
+-- Records of cours
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for dates_de_cours
+-- ----------------------------
+DROP TABLE IF EXISTS `dates_de_cours`;
 CREATE TABLE `dates_de_cours` (
-  `ID` int(32) NOT NULL,
+  `ID` int(32) NOT NULL AUTO_INCREMENT,
   `DATE_C` date DEFAULT NULL,
-  `HEURE` time(6) DEFAULT NULL
+  `HEURE` time(6) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of dates_de_cours
+-- ----------------------------
 
---
--- Structure de la table `documents_administratifs`
---
-
+-- ----------------------------
+-- Table structure for documents_administratifs
+-- ----------------------------
+DROP TABLE IF EXISTS `documents_administratifs`;
 CREATE TABLE `documents_administratifs` (
-  `ID` int(32) NOT NULL,
+  `ID` int(32) NOT NULL AUTO_INCREMENT,
   `LIBELLÉ` char(32) DEFAULT NULL,
   `ID_VACATAIRE` int(32) DEFAULT NULL,
-  `ID_RESPONSABLE_ADMINISTRATIF` int(32) DEFAULT NULL
+  `ID_RESPONSABLE_ADMINISTRATIF` int(32) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `ID_RESPONSABLE_ADMINISTRATIF_DOC` (`ID_RESPONSABLE_ADMINISTRATIF`),
+  CONSTRAINT `ID_RESPONSABLE_ADMINISTRATIF_DOC` FOREIGN KEY (`ID_RESPONSABLE_ADMINISTRATIF`) REFERENCES `utilisateurs` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of documents_administratifs
+-- ----------------------------
 
---
--- Structure de la table `formations`
---
-
+-- ----------------------------
+-- Table structure for formations
+-- ----------------------------
+DROP TABLE IF EXISTS `formations`;
 CREATE TABLE `formations` (
-  `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL
+  `ID` int(32) NOT NULL AUTO_INCREMENT,
+  `LIBELLÉ` char(32) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of formations
+-- ----------------------------
 
---
--- Structure de la table `matieres`
---
-
+-- ----------------------------
+-- Table structure for matieres
+-- ----------------------------
+DROP TABLE IF EXISTS `matieres`;
 CREATE TABLE `matieres` (
-  `ID` int(32) NOT NULL,
+  `ID` int(32) NOT NULL AUTO_INCREMENT,
   `LIBELLÉ` char(32) DEFAULT NULL,
-  `ID_TYPE_DE_COURS` int(32) DEFAULT NULL
+  `ID_TYPE_DE_COURS` int(32) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `ID_TYPE_DE_COURS_MATIERE` (`ID_TYPE_DE_COURS`),
+  CONSTRAINT `ID_TYPE_DE_COURS_MATIERE` FOREIGN KEY (`ID_TYPE_DE_COURS`) REFERENCES `types_de_cours` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of matieres
+-- ----------------------------
 
---
--- Structure de la table `salles`
---
-
+-- ----------------------------
+-- Table structure for salles
+-- ----------------------------
+DROP TABLE IF EXISTS `salles`;
 CREATE TABLE `salles` (
-  `ID` int(32) NOT NULL,
+  `ID` int(32) NOT NULL AUTO_INCREMENT,
   `LIBELLÉ` char(32) DEFAULT NULL,
-  `ID_BATIMENT` int(32) DEFAULT NULL
+  `ID_BATIMENT` int(32) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `ID_BATIMENT_SALLE` (`ID_BATIMENT`),
+  CONSTRAINT `ID_BATIMENT_SALLE` FOREIGN KEY (`ID_BATIMENT`) REFERENCES `batiments` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of salles
+-- ----------------------------
 
---
--- Structure de la table `types_de_cours`
---
-
+-- ----------------------------
+-- Table structure for types_de_cours
+-- ----------------------------
+DROP TABLE IF EXISTS `types_de_cours`;
 CREATE TABLE `types_de_cours` (
-  `ID` int(32) NOT NULL,
+  `ID` int(32) NOT NULL AUTO_INCREMENT,
   `LIBELLÉ` char(32) DEFAULT NULL,
-  `TARIF_HORAIRE` double(32,0) DEFAULT NULL
+  `TARIF_HORAIRE` double(32,0) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of types_de_cours
+-- ----------------------------
 
---
--- Structure de la table `utilisateurs`
---
-
+-- ----------------------------
+-- Table structure for utilisateurs
+-- ----------------------------
+DROP TABLE IF EXISTS `utilisateurs`;
 CREATE TABLE `utilisateurs` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `profil` int(11) UNSIGNED DEFAULT NULL,
-  `nom` varchar(32) DEFAULT NULL,
-  `prenom` varchar(32) DEFAULT NULL,
-  `email` text,
-  `mdp` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `ID` int(32) NOT NULL,
+  `PROFIL` int(32) DEFAULT NULL,
+  `NOM` varchar(255) DEFAULT NULL,
+  `PRENOM` varchar(255) DEFAULT NULL,
+  `EMAIL` varchar(255) DEFAULT NULL,
+  `MDP` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `utilisateurs`
---
+-- ----------------------------
+-- Records of utilisateurs
+-- ----------------------------
+INSERT INTO `utilisateurs` VALUES ('6', '1', 'Gates', 'Bill', 'admin@root.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
 
-INSERT INTO `utilisateurs` (`id`, `profil`, `nom`, `prenom`, `email`, `mdp`) VALUES
-(6, 1, 'Gates', 'Bill', 'admin@root.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `virements`
---
-
+-- ----------------------------
+-- Table structure for virements
+-- ----------------------------
+DROP TABLE IF EXISTS `virements`;
 CREATE TABLE `virements` (
-  `ID` char(32) NOT NULL,
+  `ID` int(32) NOT NULL,
   `DATE_V` char(32) DEFAULT NULL,
-  `EFFECTUÉ` char(32) DEFAULT NULL,
-  `ID_MATIERE` int(32) DEFAULT NULL,
-  `ID_DATE_COURS` int(32) DEFAULT NULL,
-  `ID_SALLE` int(32) DEFAULT NULL,
   `ID_RESPONSABLE_FINANCIER` int(32) DEFAULT NULL,
-  `ID_VACATAIRE` int(32) DEFAULT NULL
+  PRIMARY KEY (`ID`),
+  KEY `ID_RESPONSABLE_FINANCIER_VIREMENT` (`ID_RESPONSABLE_FINANCIER`),
+  CONSTRAINT `ID_RESPONSABLE_FINANCIER_VIREMENT` FOREIGN KEY (`ID_RESPONSABLE_FINANCIER`) REFERENCES `utilisateurs` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `batiments`
---
-ALTER TABLE `batiments`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `concerne`
---
-ALTER TABLE `concerne`
-  ADD PRIMARY KEY (`ID_FORMATION`,`ID_MATIERE`),
-  ADD KEY `ID_MATIERE` (`ID_MATIERE`);
-
---
--- Index pour la table `cookies`
---
-ALTER TABLE `cookies`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `token` (`token`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD KEY `user_id` (`user_id`);
-
---
--- Index pour la table `dates_de_cours`
---
-ALTER TABLE `dates_de_cours`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `documents_administratifs`
---
-ALTER TABLE `documents_administratifs`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_VACATAIRE` (`ID_VACATAIRE`),
-  ADD KEY `ID_RESPONSABLE_ADMINISTRATIF` (`ID_RESPONSABLE_ADMINISTRATIF`);
-
---
--- Index pour la table `formations`
---
-ALTER TABLE `formations`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `matieres`
---
-ALTER TABLE `matieres`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_TYPE_DE_COURS` (`ID_TYPE_DE_COURS`);
-
---
--- Index pour la table `salles`
---
-ALTER TABLE `salles`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_BATIMENT` (`ID_BATIMENT`);
-
---
--- Index pour la table `types_de_cours`
---
-ALTER TABLE `types_de_cours`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `utilisateurs`
---
-ALTER TABLE `utilisateurs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `virements`
---
-ALTER TABLE `virements`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_MATIERE` (`ID_MATIERE`),
-  ADD KEY `ID_DATE_COURS` (`ID_DATE_COURS`),
-  ADD KEY `ID_SALLE` (`ID_SALLE`),
-  ADD KEY `ID_RESPONSABLE_FINANCIER` (`ID_RESPONSABLE_FINANCIER`),
-  ADD KEY `ID_VACATAIRE` (`ID_VACATAIRE`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `batiments`
---
-ALTER TABLE `batiments`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `cookies`
---
-ALTER TABLE `cookies`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT pour la table `dates_de_cours`
---
-ALTER TABLE `dates_de_cours`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `documents_administratifs`
---
-ALTER TABLE `documents_administratifs`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `formations`
---
-ALTER TABLE `formations`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `matieres`
---
-ALTER TABLE `matieres`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `salles`
---
-ALTER TABLE `salles`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `types_de_cours`
---
-ALTER TABLE `types_de_cours`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `utilisateurs`
---
-ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `cookies`
---
-ALTER TABLE `cookies`
-  ADD CONSTRAINT `cookies_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `utilisateurs` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of virements
+-- ----------------------------
+SET FOREIGN_KEY_CHECKS=1;
