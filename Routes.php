@@ -5,7 +5,7 @@ Route::set('add_user', function() {
 });
 
 Route::set('view_user', function() {
-    ViewLesson_C::CreateView('ViewUser_V');
+    ViewUser_C::CreateView('ViewUser_V');
 });
 
 Route::set('index.php', function() {

@@ -6,15 +6,12 @@ class ViewLesson_C extends Controller {
 	{
 		$lessons = ViewLesson_M::listLesson();
 		$i = 0;
-		if(isset($lessons))
+		foreach($lessons as $lesson)
 		{
-			foreach($lessons as $lesson)
-			{
-				$i++;
-				echo "<tr><td>" . $i . "</td><td>" . $lesson[0] . "</td><td>" . $lesson[1] . "</td><td>" . $lesson[2] . "</td><td>" . $lesson[3] . "</td></tr>";
-			}
+			$i++;
+			echo "<tr><td>" . $i . "</td><td>" . $lesson[0] . "</td><td>" . $lesson[1] . "</td><td>" . $lesson[2] . "</td><td>" . $lesson[3] . "</td></tr>";
 		}
-        require_once("./Views/ViewLesson2_V.php");
+		require_once("./Views/ViewLesson2_V.php");
 	}
 
     public static function doSomething() {
