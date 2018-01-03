@@ -46,6 +46,7 @@ class Controller {
 			require_once("./Views/Bandeau2C_V.php");
 		}
         require_once("./Views/$viewName.php");
+        static::onLoad();
 		require_once("./Views/Footer_V.php");
         static::doSomething();
     }

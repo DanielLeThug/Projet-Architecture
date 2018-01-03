@@ -2,6 +2,16 @@
 
 class AddLesson_C extends Controller {
 
+	public static function onLoad()
+	{
+		$users = AddLesson_M::listUser();
+		foreach($users as $user)
+		{
+			echo "<option value=" . $user[0] . ">" . $user[3] . " " . $user[2] . "</option>";
+		}
+        require_once("./Views/AddLesson2_V.php");
+	}
+
     public static function doSomething() {
 		/* PROBLEME BDD
         if (isset($_POST['addlesson'])) {
