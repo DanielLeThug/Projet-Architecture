@@ -12,6 +12,7 @@ class Controller {
             if ($profil) {
                 // Si l'utilisateur est un administrateur
                 if ($profil[0]['profil'] == 1) {
+					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (!isset($_COOKIE['PAID_']))
 					{
@@ -22,6 +23,7 @@ class Controller {
 						require_once("./Views/Bandeau2C_V.php");
 					}
                     require_once("./Views/$viewName.php");
+					require_once("./Views/Footer_V.php");
                     static::doSomething();
                 } else {
                     header("Location: index.php");
@@ -33,6 +35,7 @@ class Controller {
     }
 
     public static function CreateView($viewName) {
+		require_once("./Views/Header_V.php");
 		require_once("./Views/Bandeau_V.php");
 		if (!isset($_COOKIE['PAID_']))
 		{
@@ -43,6 +46,7 @@ class Controller {
 			require_once("./Views/Bandeau2C_V.php");
 		}
         require_once("./Views/$viewName.php");
+		require_once("./Views/Footer_V.php");
         static::doSomething();
     }
 
