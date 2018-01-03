@@ -122,7 +122,7 @@ CREATE TABLE `utilisateurs` (
 -- ----------------------------
 -- Records of utilisateurs
 -- ----------------------------
-INSERT INTO `utilisateurs` VALUES ('6', '1', 'Gates', 'Bill', 'admin@root.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
+INSERT INTO `utilisateurs` VALUES (NULL, '1', 'Gates', 'Bill', 'admin@root.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
 
 -- ----------------------------
 -- Table structure for documents_administratifs

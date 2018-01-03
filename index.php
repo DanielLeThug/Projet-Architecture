@@ -11,13 +11,13 @@ function __autoload($class_name) {
     }
 
 }
-
+/*
 if (Controller::isLoggedIn()) {
     echo "Connecté ! ";
     echo Controller::isLoggedIn();
 } else {
     echo "Pas Connecté !";
-}
+}*/
 
 if (!in_array($_GET['url'], Route::$validRoutes)) {
     require_once("./Views/404_V.php");

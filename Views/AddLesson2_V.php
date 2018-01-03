@@ -1,17 +1,19 @@
-				</select>
+					</select>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="salle">Salle :</label>
+                <label class="control-label col-sm-2" for="date">Date :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="salle" placeholder="Entrez une salle désirée" name="salle">
+                    <input type="date" class="form-control" id="date" name="date">
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default" name="addlesson">Ajouter</button>
+                <label class="control-label col-sm-2" for="heure">Heure :</label>
+                <div class="col-sm-10">
+                    <input type="time" class="form-control" id="heure" name="heure">
                 </div>
             </div>
-        </form>
-      
-    </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="professeur">Professeur :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="professeur" name="professeur">
