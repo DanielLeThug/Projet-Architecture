@@ -2,6 +2,10 @@
 
 class Login_C extends Controller {
 
+	public static function onLoad()
+	{
+	}
+
     public static function doSomething() {
         if (isset($_POST['login'])) {
             $email = $_POST['email'];

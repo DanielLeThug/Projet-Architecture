@@ -4,6 +4,10 @@ Route::set('add_user', function() {
     AddUser_C::CreatePrivateView('AddUser_V');
 });
 
+Route::set('view_user', function() {
+    ViewLesson_C::CreateView('ViewUser_V');
+});
+
 Route::set('index.php', function() {
     Index_C::CreateView('Index_V');
 });
