@@ -8,6 +8,7 @@ class AddUser_C extends Controller {
 
     public static function doSomething() {
         if (isset($_POST['adduser'])) {
+			$profil = $_POST['profil'];
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
             $email = $_POST['email'];
@@ -23,7 +24,7 @@ class AddUser_C extends Controller {
 
                             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-                                AddUser_M::addUser($nom, $prenom, $email, $mdp);
+                                AddUser_M::addUser($profil, $nom, $prenom, $email, $mdp);
                                 echo "Utilisateur ajouté.";
                             } else {
                                 echo "Adresse email invalide.";

@@ -1,4 +1,3 @@
-    <div class="container">
         <h2>AJOUTER UN UTILISATEUR :</h2>
         <form class="form-horizontal" action="add_user" method="post">
             <div class="form-group">
@@ -28,12 +27,12 @@
             <div class="form-group">
 				<label class="control-label col-sm-2" for="utilisateur">Type d'utilisateur :</label>
 				<div class="col-sm-10">
-					<select name="utilisateur" class="form-control" size="1">
-					<option>Contrôle de gestion
-					<option>Responsable de Formation
-					<option>Responsable Administratif de formation
-					<option>Responsable Financier
-					<option>Vacataire
+					<select name="profil" id="profil" class="form-control" size="1">
+					<option value="2">Contrôle de gestion
+					<option value="3">Responsable de Formation
+					<option value="4">Responsable Administratif de formation
+					<option value="5">Responsable Financier
+					<option value="6">Vacataire
 					</select>
 				</div>
             </div>
@@ -43,4 +42,3 @@
                 </div>
             </div>
         </form>
-    </div>
