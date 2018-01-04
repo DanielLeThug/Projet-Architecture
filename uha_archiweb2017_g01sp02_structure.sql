@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `uha_archiweb2017_g01sp02`
 --
-
+CREATE DATABASE IF NOT EXISTS uha_archiweb2017_g01sp02;
+USE uha_archiweb2017_g01sp02;
 -- --------------------------------------------------------
 
 --
