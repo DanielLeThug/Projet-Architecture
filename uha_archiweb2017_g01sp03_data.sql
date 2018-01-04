@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `uha_archiweb2017_g01sp02`
 --
-USE uha_archiweb2017_g01sp02;
+USE uha_archiweb2017_g01sp03;
 --
 -- Déchargement des données de la table `batiments`
 --

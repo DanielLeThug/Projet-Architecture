@@ -2,7 +2,7 @@
 class Database {
 
     public static $host = "127.0.0.1";
-    public static $dbName = "uha_archiweb2017_g01sp02";
+    public static $dbName = "uha_archiweb2017_g01sp03";
     public static $username = "root";
     public static $password = "";
 
