@@ -33,7 +33,7 @@ class ViewUser_C extends Controller {
 				default:
 					$profil = "";
 			}
-			echo "" . $profil . "</td><td>" . $user[2] . "</td><td>" . $user[3] . "</td><td>" . $user[4] . "</td><td>" . $user[5] . "</td></tr>";
+			echo "" . $profil . "</td><td>" . $user[2] . "</td><td>" . $user[3] . "</td><td>" . $user[4] . "</td></tr>";
 		}
         require_once("./Views/ViewUser2_V.php");
 	}
