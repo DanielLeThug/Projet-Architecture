@@ -36,6 +36,106 @@ CREATE TABLE `batiments` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `dates_de_cours`
+--
+
+CREATE TABLE `dates_de_cours` (
+  `ID` int(32) NOT NULL,
+  `DATE_C` date DEFAULT NULL,
+  `HEURE` time(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `formations`
+--
+
+CREATE TABLE `formations` (
+  `ID` int(32) NOT NULL,
+  `LIBELLÉ` char(32) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+
+--
+-- Structure de la table `salles`
+--
+
+CREATE TABLE `salles` (
+  `ID` int(32) NOT NULL,
+  `LIBELLÉ` char(32) DEFAULT NULL,
+  `ID_BATIMENT` int(32) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `types_de_cours`
+--
+
+CREATE TABLE `types_de_cours` (
+  `ID` int(32) NOT NULL,
+  `LIBELLÉ` char(32) DEFAULT NULL,
+  `TARIF_HORAIRE` double(32,0) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `matieres`
+--
+
+CREATE TABLE `matieres` (
+  `ID` int(32) NOT NULL,
+  `LIBELLÉ` char(32) DEFAULT NULL,
+  `ID_TYPE_DE_COURS` int(32) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+CREATE TABLE `utilisateurs` (
+  `ID` int(32) NOT NULL,
+  `PROFIL` int(32) DEFAULT NULL,
+  `NOM` varchar(255) DEFAULT NULL,
+  `PRENOM` varchar(255) DEFAULT NULL,
+  `EMAIL` varchar(255) DEFAULT NULL,
+  `MDP` varchar(60) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `documents_administratifs`
+--
+
+CREATE TABLE `documents_administratifs` (
+  `ID` int(32) NOT NULL,
+  `LIBELLÉ` char(32) DEFAULT NULL,
+  `ID_VACATAIRE` int(32) DEFAULT NULL,
+  `ID_RESPONSABLE_ADMINISTRATIF` int(32) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `virements`
+--
+
+CREATE TABLE `virements` (
+  `ID` int(32) NOT NULL,
+  `DATE_V` date DEFAULT NULL,
+  `ID_RESPONSABLE_FINANCIER` int(32) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `concerne`
 --
 
@@ -71,104 +171,7 @@ CREATE TABLE `cours` (
   `EFFECTUE` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `dates_de_cours`
---
-
-CREATE TABLE `dates_de_cours` (
-  `ID` int(32) NOT NULL,
-  `DATE_C` date DEFAULT NULL,
-  `HEURE` time(6) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `documents_administratifs`
---
-
-CREATE TABLE `documents_administratifs` (
-  `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL,
-  `ID_VACATAIRE` int(32) DEFAULT NULL,
-  `ID_RESPONSABLE_ADMINISTRATIF` int(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `formations`
---
-
-CREATE TABLE `formations` (
-  `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `matieres`
---
-
-CREATE TABLE `matieres` (
-  `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL,
-  `ID_TYPE_DE_COURS` int(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `salles`
---
-
-CREATE TABLE `salles` (
-  `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL,
-  `ID_BATIMENT` int(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `types_de_cours`
---
-
-CREATE TABLE `types_de_cours` (
-  `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL,
-  `TARIF_HORAIRE` double(32,0) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `utilisateurs`
---
-
-CREATE TABLE `utilisateurs` (
-  `ID` int(32) NOT NULL,
-  `PROFIL` int(32) DEFAULT NULL,
-  `NOM` varchar(255) DEFAULT NULL,
-  `PRENOM` varchar(255) DEFAULT NULL,
-  `EMAIL` varchar(255) DEFAULT NULL,
-  `MDP` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `virements`
---
-
-CREATE TABLE `virements` (
-  `ID` int(32) NOT NULL,
-  `DATE_V` date DEFAULT NULL,
-  `ID_RESPONSABLE_FINANCIER` int(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Index pour les tables déchargées
