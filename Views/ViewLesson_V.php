@@ -11,11 +11,12 @@
 			</thead>
 			<tbody>
 				<?php
+					$lessons = ViewLesson_M::listLesson();
 					$i = 0;
 					foreach($lessons as $lesson)
 					{
 						$i++;
-						echo "<tr><td>" . $i . "</td><td>" . $lesson['Intitulé'] . "</td><td>" . $lesson['Date'] . "</td><td>" . $lesson['Professeur'] . "</td><td>" . $lesson['Salle'] . "</td></tr>";
+						echo "<tr><td>" . $i . "</td><td>" . $lesson['Intitulé'] . " " . $lesson['Type'] . "</td><td>" . $lesson['Date'] . "</td><td>" . $lesson['Professeur'] . "</td><td>" . $lesson['Salle'] . "</td></tr>";
 					}
 				?>
 			</tbody>

@@ -32,8 +32,6 @@
 				<div class="col-sm-10">
 					<select class="form-control" id="professeur" name="professeur">
 					<?php
-						require_once("./Views/AddLesson2_V.php");
-						print_r($disciplines);
 						$users = AddLesson_M::listUser();
 						foreach($users as $user)
 						{
@@ -43,6 +41,7 @@
 					</select>
                 </div>
             </div>
+			
             <div class="form-group">
                 <label class="control-label col-sm-2" for="salle">Salle :</label>
                 <div class="col-sm-10">
@@ -57,6 +56,22 @@
 					</select>
 				</div>
             </div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="type_cours">Type de cours :</label>
+				<div class="col-sm-10">
+					<select class="form-control" id="type_cours" name="type_cours">
+					<?php
+						$types_de_cours = AddLesson_M::listTypesDeCours();
+						foreach($types_de_cours as $type_de_cours)
+						{
+							echo "<option value=" . $type_de_cours[0] . ">" . $type_de_cours[1] . "</option>";
+						}
+					?>
+					</select>
+                </div>
+            </div>
+			
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default" name="addlesson">Ajouter</button>
