@@ -21,7 +21,7 @@ class AddUser_C extends Controller {
                             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
                                 AddUser_M::addUser($profil, $nom, $prenom, $email, $mdp);
-                                echo "Utilisateur ajouté.";
+                                echo "<h3>Utilisateur ajouté.</h3>";
                             } else {
                                 echo "Adresse email invalide.";
                             }

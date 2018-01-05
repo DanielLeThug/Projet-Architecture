@@ -13,7 +13,7 @@ class AddLesson_C extends Controller {
             $salle = $_POST['salle'];
 			$typecours = $_POST['type_cours'];
 			AddLesson_M::addLesson($matiere, $date, $heure, $professeur, $salle, $typecours);
-			echo "Cours ajouté.";
+			echo "<h3>Cours ajouté.</h3>";
         }
     }
 	
