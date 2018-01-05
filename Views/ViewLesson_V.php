@@ -8,8 +8,10 @@
 					<th scope="col">Professeur</th>
 					<th scope="col">Salle</th>
 					<th scope="col">Virement Effectué</th>
-				</tr>
-			</thead>
+			<th scope="col"></th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
 			<tbody>
 				<?php
 					$lessons = ViewLesson_M::listLesson();
@@ -25,8 +27,15 @@
 						{
 							$virement = 'Non | <a href="validate_payment&id_mat=' . $lesson['id_mat'] . '&id_vac=' . $lesson['id_vac'] . '&id_salle=' . $lesson['id_salle'] . '&id_type_cours=' . $lesson['id_type_cours'] . '&id_date=' . $lesson['id_date'] . '" >Valider paiement <span class="glyphicon glyphicon-euro"></span></a> ';
 						}
-						echo "<tr><td>" . $i . "</td><td>" . $lesson['Intitulé'] . " " . $lesson['Type'] . "</td><td>" . $lesson['Date'] . "</td><td>" . $lesson['Professeur'] . "</td><td>" . $lesson['Salle'] . "</td><td>" . $virement . "</td></tr>";
-					}
-				?>
-			</tbody>
-    </div>
+			echo "<tr><td>" . $i;
+			echo "</td><td>" . $lesson['Intitulé'] . " " . $lesson['Type'];
+			echo "</td><td>" . $lesson['Date'];
+			echo "</td><td>" . $lesson['Professeur'];
+			echo "</td><td>" . $lesson['Salle'];
+			echo "</td><td>" . $virement;
+			echo "</td><td><a href='edit_lesson&id=" . $lesson['Id'] . "'><span class='glyphicon glyphicon-pencil'></span></a>";
+			echo "</td><td><a href='view_lesson&id=" . $lesson['Id'] . "'><span class='glyphicon glyphicon-remove'></span></a></td></tr>";
+		}
+		?>
+	</tbody>
+</div>
