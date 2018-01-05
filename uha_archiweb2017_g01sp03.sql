@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 05 jan. 2018 à 10:46
+-- Généré le :  ven. 05 jan. 2018 à 16:47
 -- Version du serveur :  10.1.28-MariaDB
--- Version de PHP :  7.1.10
+-- Version de PHP :  7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -80,10 +80,6 @@ CREATE TABLE `cookies` (
   `user_id` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `cookies`
---
-
 -- --------------------------------------------------------
 
 --
@@ -96,19 +92,20 @@ CREATE TABLE `cours` (
   `ID_SALLE` int(32) NOT NULL,
   `ID_VACATAIRE` int(32) NOT NULL,
   `ID_VIREMENT` int(32) DEFAULT NULL,
-  `EFFECTUE` tinyint(4) NOT NULL
+  `EFFECTUE` tinyint(4) NOT NULL,
+  `ID_TYPE_DE_COURS` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `cours`
 --
 
-INSERT INTO `cours` (`ID_MATIERE`, `ID_DATE`, `ID_SALLE`, `ID_VACATAIRE`, `ID_VIREMENT`, `EFFECTUE`) VALUES
-(1, 1, 1, 1, NULL, 1),
-(2, 2, 2, 1, NULL, 0),
-(2, 3, 2, 1, NULL, 0),
-(3, 4, 4, 1, NULL, 0),
-(4, 5, 6, 1, NULL, 0);
+INSERT INTO `cours` (`ID_MATIERE`, `ID_DATE`, `ID_SALLE`, `ID_VACATAIRE`, `ID_VIREMENT`, `EFFECTUE`, `ID_TYPE_DE_COURS`) VALUES
+(1, 1, 1, 1, 1, 1, 1),
+(2, 2, 2, 1, NULL, 0, 2),
+(2, 3, 2, 1, NULL, 0, 2),
+(3, 4, 4, 1, NULL, 0, 1),
+(4, 5, 6, 1, NULL, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -173,19 +170,18 @@ INSERT INTO `formations` (`ID`, `LIBELLÉ`) VALUES
 
 CREATE TABLE `matieres` (
   `ID` int(32) NOT NULL,
-  `LIBELLÉ` char(32) DEFAULT NULL,
-  `ID_TYPE_DE_COURS` int(32) DEFAULT NULL
+  `LIBELLÉ` char(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `matieres`
 --
 
-INSERT INTO `matieres` (`ID`, `LIBELLÉ`, `ID_TYPE_DE_COURS`) VALUES
-(1, 'Structure des organisations', 1),
-(2, 'Anglais', 2),
-(3, 'Droit Info', 1),
-(4, 'Entrepôt de données', 3);
+INSERT INTO `matieres` (`ID`, `LIBELLÉ`) VALUES
+(1, 'Structure des organisations'),
+(2, 'Anglais'),
+(3, 'Droit Info'),
+(4, 'Entrepôt de données');
 
 -- --------------------------------------------------------
 
@@ -310,7 +306,8 @@ ALTER TABLE `cours`
   ADD KEY `ID_DATE_COURS` (`ID_DATE`),
   ADD KEY `ID_VIREMENT_COURS` (`ID_VIREMENT`),
   ADD KEY `ID_SALLE_COURS` (`ID_SALLE`),
-  ADD KEY `ID_VACATAIRE_COURS` (`ID_VACATAIRE`);
+  ADD KEY `ID_VACATAIRE_COURS` (`ID_VACATAIRE`),
+  ADD KEY `ID_TYPE_DE_COURS` (`ID_TYPE_DE_COURS`);
 
 --
 -- Index pour la table `dates_de_cours`
@@ -335,8 +332,7 @@ ALTER TABLE `formations`
 -- Index pour la table `matieres`
 --
 ALTER TABLE `matieres`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_TYPE_DE_COURS_MATIERE` (`ID_TYPE_DE_COURS`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Index pour la table `salles`
@@ -452,6 +448,7 @@ ALTER TABLE `cours`
   ADD CONSTRAINT `ID_DATE_COURS` FOREIGN KEY (`ID_DATE`) REFERENCES `dates_de_cours` (`ID`),
   ADD CONSTRAINT `ID_MATIERE_COURS` FOREIGN KEY (`ID_MATIERE`) REFERENCES `matieres` (`ID`),
   ADD CONSTRAINT `ID_SALLE_COURS` FOREIGN KEY (`ID_SALLE`) REFERENCES `salles` (`ID`),
+  ADD CONSTRAINT `ID_TYPE_DE_COURS` FOREIGN KEY (`ID_TYPE_DE_COURS`) REFERENCES `types_de_cours` (`ID`),
   ADD CONSTRAINT `ID_VACATAIRE_COURS` FOREIGN KEY (`ID_VACATAIRE`) REFERENCES `utilisateurs` (`ID`),
   ADD CONSTRAINT `ID_VIREMENT_COURS` FOREIGN KEY (`ID_VIREMENT`) REFERENCES `virements` (`ID`);
 
@@ -460,12 +457,6 @@ ALTER TABLE `cours`
 --
 ALTER TABLE `documents_administratifs`
   ADD CONSTRAINT `ID_RESPONSABLE_ADMINISTRATIF_DOC` FOREIGN KEY (`ID_RESPONSABLE_ADMINISTRATIF`) REFERENCES `utilisateurs` (`ID`);
-
---
--- Contraintes pour la table `matieres`
---
-ALTER TABLE `matieres`
-  ADD CONSTRAINT `ID_TYPE_DE_COURS_MATIERE` FOREIGN KEY (`ID_TYPE_DE_COURS`) REFERENCES `types_de_cours` (`ID`);
 
 --
 -- Contraintes pour la table `salles`
