@@ -1,4 +1,7 @@
 <h2>LISTE DES COURS :</h2>
+
+<div class="panel panel-default">
+
 <table class="table">
 	<thead>
 		<tr>
@@ -21,7 +24,8 @@
 			$i++;
 			if($lesson['Virement'] == 1)
 			{
-				$virement = 'Oui';
+				$virement = 'Oui '. "<span class='glyphicon glyphicon-ok'>";
+
 			}
 			else
 			{
@@ -33,9 +37,12 @@
 			echo "</td><td>" . $lesson['Professeur'];
 			echo "</td><td>" . $lesson['Salle'];
 			echo "</td><td>" . $virement;
-			echo "</td><td><a href='edit_lesson&id=" . $lesson['Id'] . "'><span class='glyphicon glyphicon-pencil'></span></a>";
+			echo "</span></td><td><a href='edit_lesson&id=" . $lesson['Id'] . "'><span class='glyphicon glyphicon-pencil'></span></a>";
 			echo "</td><td><a href='view_lesson&id=" . $lesson['Id'] . "'><span class='glyphicon glyphicon-remove'></span></a></td></tr>";
 		}
 		?>
 	</tbody>
+</table>
+</div>
+
 </div>
