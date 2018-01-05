@@ -23,7 +23,7 @@
 						}
 						else
 						{
-							$virement = 'Non | <a href="validate_payment" >Valider paiement <span class="glyphicon glyphicon-euro"></span></a> ';
+							$virement = 'Non | <a href="validate_payment&id_mat=' . $lesson['id_mat'] . '&id_vac=' . $lesson['id_vac'] . '&id_salle=' . $lesson['id_salle'] . '&id_type_cours=' . $lesson['id_type_cours'] . '&id_date=' . $lesson['id_date'] . '" >Valider paiement <span class="glyphicon glyphicon-euro"></span></a> ';
 						}
 						echo "<tr><td>" . $i . "</td><td>" . $lesson['Intitulé'] . " " . $lesson['Type'] . "</td><td>" . $lesson['Date'] . "</td><td>" . $lesson['Professeur'] . "</td><td>" . $lesson['Salle'] . "</td><td>" . $virement . "</td></tr>";
 					}

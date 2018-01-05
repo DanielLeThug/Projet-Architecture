@@ -5,10 +5,10 @@
                 <div class="col-sm-10">
                     <select class="form-control" id="resp_fina" name="resp_fina">
 					<?php
-						$resps = ValidatePayment_M::listResp();
-						foreach($resps as $resp)
+						$payments = ValidatePayment_M::listPayment();
+						foreach($payments as $payment)
 						{
-							echo "<option value=" . $resp['user'] . ">" . $resp['nom'] . " " . $resp['prenom'] . "</option>";
+							echo "<option value=" . $payment['id'] . "> Le " . $payment['date'] . " par " . $payment['nom'] . " " . $payment['prenom'] . "</option>";
 						}
 					?>
 					</select>
@@ -16,7 +16,7 @@
 			</div>
 			<div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default" name="validatepayment">Ajouter</button>
+                    <button type="submit" class="btn btn-default" name="validatepayment">Valider</button>
                 </div>
             </div>
         </form>

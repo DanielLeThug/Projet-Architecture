@@ -4,6 +4,11 @@ class ViewLesson_M extends Model {
 
 	public static function listLesson() {
 		return self::query("SELECT matieres.LIBELLÉ AS Intitulé, 
+							cours.ID_MATIERE As id_mat,
+							cours.ID_SALLE As id_salle,
+							cours.ID_VACATAIRE As id_vac,
+							cours.ID_TYPE_DE_COURS As id_type_cours,
+							cours.ID_DATE As id_date,
 							types_de_cours.LIBELLÉ As Type,
 							cours.EFFECTUE As Virement,
 							CONCAT(dates_de_cours.DATE_C, ' ' ,dates_de_cours.HEURE) As Date, 
