@@ -1,12 +1,8 @@
-<h2>FOURNIR UN DOCUMENT :</h2>
-<form class="form-horizontal" method="post" action="upload" enctype="multipart/form-data">
-
-	<div class="panel panel-primary"> 
-	
-		<div class=panel-heading> 
-		<h3 class=panel-title>Documents administratifs</h3> 
-		</div> 
+			<h2 class=panel-title>FOURNIR UN DOCUMENT :</h2>
+		</div>
 		<div class=panel-body> 
+		<form class="form-horizontal" method="post" action="upload" enctype="multipart/form-data">
+
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="rib">RIB:</label>
@@ -54,17 +50,6 @@
 				<div class="col-sm-offset-10 col-sm-10">
 					<button type="submit" class="btn btn-default" name="upload">Envoyer</button>
 				</div>
-			</div>
-			
-		</div>
+			</div>	
 	
-	</div>
-	
-    
-	
-	
-	
-
-	
-	
-</form>
+		</form>

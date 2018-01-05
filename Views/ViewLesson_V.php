@@ -1,14 +1,16 @@
-		<h2>LISTE DES COURS :</h2>
+			<h2 class=panel-title>LISTE DES COURS :</h2>
+		</div>
+		<div class="panel-body">
 		<table class="table">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Intitulé</th>
-					<th scope="col">Date</th>
-					<th scope="col">Professeur</th>
+					<th scope="col"><span class='glyphicon glyphicon-calendar'></span><span class='glyphicon glyphicon-time'></span> Date</th>
+					<th scope="col"><span class='glyphicon glyphicon-user'></span> Professeur</th>
 					<th scope="col">Salle</th>
 					<th scope="col">Virement Effectué</th>
-					<th scope="col"></th>
+					<th scope="col"><span class='glyphicon glyphicon-cog'></span></th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
@@ -39,4 +41,3 @@
 				?>
 			</tbody>
 		</table>
-	</div>

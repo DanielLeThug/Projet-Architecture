@@ -1,4 +1,6 @@
-		<h2>LISTE DES UTILISATEURS :</h2>
+			<h2 class=panel-title>LISTE DES UTILISATEURS :</h2>
+		</div>
+		<div class="panel-body">
 		<table class="table">
 			<thead>
 				<tr>
@@ -7,7 +9,7 @@
 					<th scope="col">Nom</th>
 					<th scope="col">Prenom</th>
 					<th scope="col">Email</th>
-					<th scope="col"></th>
+					<th scope="col"><span class='glyphicon glyphicon-cog'></span></th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
@@ -47,4 +49,3 @@
 					}
 				?>
 			</tbody>
-    </div>

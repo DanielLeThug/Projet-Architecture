@@ -1,4 +1,6 @@
-        <h2>AJOUTER UN UTILISATEUR :</h2>
+			<h2 class=panel-title>AJOUTER UN UTILISATEUR :</h2>
+		</div>
+		<div class="panel-body">
         <form class="form-horizontal" action="add_user" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="nom">Nom :</label>

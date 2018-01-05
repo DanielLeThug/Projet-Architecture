@@ -1,4 +1,6 @@
-		<h2>AJOUTER UN COURS :</h2>
+			<h2 class=panel-title>AJOUTER UN COURS :</h2>
+		</div>
+		<div class="panel-body">
         <form class="form-horizontal" action="add_lesson" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="matiere">Intitulé du cours :</label>
@@ -15,19 +17,19 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="date">Date :</label>
+				<label class="control-label col-sm-2" for="date"><span class='glyphicon glyphicon-calendar'></span> Date :</label>
 				<div class="col-sm-10">
 					<input type="date" class="form-control" id="date" name="date">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="heure">Heure :</label>
+				<label class="control-label col-sm-2" for="heure"><span class='glyphicon glyphicon-time'></span> Heure :</label>
 				<div class="col-sm-10">
 					<input type="time" class="form-control" id="heure" name="heure">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="professeur">Professeur :</label>
+				<label class="control-label col-sm-2" for="professeur"><span class='glyphicon glyphicon-user'></span> Professeur :</label>
 				<div class="col-sm-10">
 					<select class="form-control" id="professeur" name="professeur">
 					<?php
@@ -57,7 +59,7 @@
             </div>
 			
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="type_cours">Type de cours :</label>
+				<label class="control-label col-sm-2" for="type_cours"><span class='glyphicon glyphicon-education'></span> Type de cours :</label>
 				<div class="col-sm-10">
 					<select class="form-control" id="type_cours" name="type_cours">
 					<?php

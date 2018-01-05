@@ -20,6 +20,14 @@ if (Controller::isLoggedIn()) {
 }*/
 
 if (!in_array($_GET['url'], Route::$validRoutes)) {
+	require_once("./Views/Header_V.php");
+	require_once("./Views/Bandeau_V.php");
+	
+	if (Controller::isLoggedIn()) {
+		require_once("./Views/Bandeau2C_V.php");
+	} else {
+		require_once("./Views/Bandeau2DC_V.php");
+	}
     require_once("./Views/404_V.php");
 }
 ?>

@@ -1,4 +1,6 @@
-		<h2>VALIDER UN PAIEMENT :</h2>
+			<h2 class=panel-title>VALIDER UN PAIEMENT :</h2>
+		</div>
+		<div class="panel-body">
         <form class="form-horizontal" action="validate_payment" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="resp_fina">Responsable financier :</label>
@@ -26,5 +28,3 @@
                 </div>
             </div>
         </form>
-      
-    </div>

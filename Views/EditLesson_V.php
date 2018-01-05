@@ -1,4 +1,6 @@
-<h2>EDITER UN UTILISATEUR :</h2>
+	<h2 class=panel-title>EDITER UN UTILISATEUR :</h2>
+</div>
+<div class="panel-body">
 <?php
 $user = EditLesson_M::getLesson($_GET['id']);
 ?>

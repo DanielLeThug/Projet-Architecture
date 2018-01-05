@@ -19,6 +19,5 @@
 			</div>
 		  <!-- Navbar content -->
 		</nav>
-
-		
-		
+		<div class="panel panel-primary"> 
+			<div class=panel-heading>

@@ -1,4 +1,6 @@
-        <h2>CONNEXION :</h2>
+			<h2 class=panel-title>CONNEXION :</h2>
+		</div>
+		<div class="panel-body">
         <form class="form-horizontal" action="login" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Adresse email :</label>
@@ -25,4 +27,4 @@
                 </div>
             </div>
         </form>
-    </div>
+   
