@@ -12,6 +12,11 @@ class AddLesson_M extends Model {
 		return self::query('SELECT * FROM matieres');
 	}
 	
+	public static function listTypesDeCours()
+	{
+		return self::query('SELECT * FROM types_de_cours');
+	}
+	
 	public static function listSalle()
 	{
 		return self::query('SELECT * FROM salles
