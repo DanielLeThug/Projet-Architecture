@@ -32,8 +32,6 @@
 				<div class="col-sm-10">
 					<select class="form-control" id="professeur" name="professeur">
 					<?php
-						require_once("./Views/AddLesson2_V.php");
-						print_r($disciplines);
 						$users = AddLesson_M::listUser();
 						foreach($users as $user)
 						{
