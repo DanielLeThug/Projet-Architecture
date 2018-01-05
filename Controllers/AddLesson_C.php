@@ -11,7 +11,8 @@ class AddLesson_C extends Controller {
             $heure = $_POST['heure'];
             $professeur = $_POST['professeur'];
             $salle = $_POST['salle'];
-			AddLesson_M::addLesson($matiere, $date, $heure, $professeur, $salle);
+			$typecours = $_POST['type_cours'];
+			AddLesson_M::addLesson($matiere, $date, $heure, $professeur, $salle, $typecours);
 			echo "Cours ajouté.";
         }
     }
