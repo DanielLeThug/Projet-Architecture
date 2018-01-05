@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 05 jan. 2018 à 16:47
+-- Généré le :  ven. 05 jan. 2018 à 20:08
 -- Version du serveur :  10.1.28-MariaDB
--- Version de PHP :  7.1.11
+-- Version de PHP :  7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -93,19 +93,20 @@ CREATE TABLE `cours` (
   `ID_VACATAIRE` int(32) NOT NULL,
   `ID_VIREMENT` int(32) DEFAULT NULL,
   `EFFECTUE` tinyint(4) NOT NULL,
-  `ID_TYPE_DE_COURS` int(32) NOT NULL
+  `ID_TYPE_DE_COURS` int(32) NOT NULL,
+  `ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `cours`
 --
 
-INSERT INTO `cours` (`ID_MATIERE`, `ID_DATE`, `ID_SALLE`, `ID_VACATAIRE`, `ID_VIREMENT`, `EFFECTUE`, `ID_TYPE_DE_COURS`) VALUES
-(1, 1, 1, 1, 1, 1, 1),
-(2, 2, 2, 1, NULL, 0, 2),
-(2, 3, 2, 1, NULL, 0, 2),
-(3, 4, 4, 1, NULL, 0, 1),
-(4, 5, 6, 1, NULL, 0, 3);
+INSERT INTO `cours` (`ID_MATIERE`, `ID_DATE`, `ID_SALLE`, `ID_VACATAIRE`, `ID_VIREMENT`, `EFFECTUE`, `ID_TYPE_DE_COURS`, `ID`) VALUES
+(1, 1, 1, 1, 1, 1, 1, 1),
+(2, 2, 2, 1, NULL, 0, 2, 2),
+(2, 3, 2, 1, NULL, 0, 2, 3),
+(3, 4, 4, 1, NULL, 0, 1, 4),
+(4, 5, 6, 1, NULL, 0, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -303,6 +304,7 @@ ALTER TABLE `cookies`
 --
 ALTER TABLE `cours`
   ADD PRIMARY KEY (`ID_MATIERE`,`ID_DATE`,`ID_SALLE`,`ID_VACATAIRE`),
+  ADD UNIQUE KEY `ID` (`ID`),
   ADD KEY `ID_DATE_COURS` (`ID_DATE`),
   ADD KEY `ID_VIREMENT_COURS` (`ID_VIREMENT`),
   ADD KEY `ID_SALLE_COURS` (`ID_SALLE`),
@@ -374,7 +376,13 @@ ALTER TABLE `batiments`
 -- AUTO_INCREMENT pour la table `cookies`
 --
 ALTER TABLE `cookies`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT pour la table `cours`
+--
+ALTER TABLE `cours`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `dates_de_cours`
@@ -416,7 +424,7 @@ ALTER TABLE `types_de_cours`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `virements`
