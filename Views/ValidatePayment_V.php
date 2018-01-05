@@ -14,6 +14,12 @@
 					</select>
 				</div>
 			</div>
+			<div class="form-group hidden">
+				<label class="control-label col-sm-2" for="id">ID :</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="id" name="id" value="<?php if (isset($_GET['id_cours'])) echo $_GET['id_cours'];?>">
+				</div>
+			</div>
 			<div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default" name="validatepayment">Valider</button>
