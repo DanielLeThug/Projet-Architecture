@@ -3,7 +3,7 @@
 class EditUser_M extends Model {
 
 	public static function getUser($id) {
-		return self::query('SELECT * FROM utilisateurs WHERE ID=:ID',array(':ID'=>$id));
+		return self::query('SELECT * FROM utilisateurs WHERE ID = :ID',array(':ID'=>$id));
 		
 	}
 	

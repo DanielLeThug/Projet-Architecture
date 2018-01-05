@@ -1,27 +1,24 @@
 <h2>EDITER UN UTILISATEUR :</h2>
+	<?php 
+		$user = EditUser_M::getUser($_GET['id']);
+	?>
         <form class="form-horizontal" action="add_user" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="nom">Nom :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nom" value="<?php if (isset($user[2])) echo $user[3];?>" name="nom">
+                    <input type="text" class="form-control" id="nom" value=<?php if (isset($user[0][2])) echo $user[0][2];?> name="nom">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="prenom">Prénom :</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="prenom" value="<?php if (isset($user[3])) echo $user[3];?>" name="prenom">	
+                    <input type="text" class="form-control" id="prenom" value="<?php if (isset($user[0][3])) echo $user[0][3];?>" name="prenom">	
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Adresse email :</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" value="<?php if (isset($user[4])) echo $user[4];?>" name="email">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Mot de passe :</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="mdp" name="mdp">
+                    <input type="email" class="form-control" id="email" value="<?php if (isset($user[0][4])) echo $user[0][4];?>" name="email">
                 </div>
             </div>
             <div class="form-group">
