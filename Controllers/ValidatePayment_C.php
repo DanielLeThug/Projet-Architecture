@@ -9,7 +9,7 @@ class ValidatePayment_C extends Controller {
 			$id_vir = $_POST['resp_fina'];
 			$id_cours = $_POST['id'];
 			ValidatePayment_M::updatePayment($id_vir, $id_cours);
-			echo "<h3>Virement validé</h3>";
+			header('Location: ./view_lesson');
 		}
     }
 	

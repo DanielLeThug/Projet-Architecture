@@ -12,7 +12,7 @@ class ValidatePayment_M extends Model {
 	}
 	
 	public static function updatePayment($id_vir, $id_cours) {
-		return self::query('UPDATE cours SET ID_VIREMENT=:ID_VIR
+		return self::query('UPDATE cours SET ID_VIREMENT=:ID_VIR, EFFECTUE=1
 							WHERE ID=:ID_COURS',
 							array(':ID_VIR'=>$id_vir,':ID_COURS'=>$id_cours));
 	}
