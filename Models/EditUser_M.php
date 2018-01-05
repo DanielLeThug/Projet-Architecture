@@ -3,7 +3,7 @@
 class EditUser_M extends Model {
 
 	public static function getUser($id) {
-		return self::query('SELECT * FROM utilisateurs WHERE ID=:ID',array(':ID'=>$id));
+		return self::query('SELECT * FROM utilisateurs WHERE ID = :ID',array(':ID'=>$id));
 		
 	}
 	
@@ -20,8 +20,7 @@ class EditUser_M extends Model {
 	}
 	 
 	public function editUser($id,$nom,$prenom,$mail) {
-		return self::query('UPDATE utilisateurs SET NOM=:NOM, PRENOM=:PRENOM, EMAIL=:EMAIL WHERE ID=:ID',array(':ID'=>$id,':NOM'=>$nom,':PRENOM'=>$prenom,':EMAIL'=>$mail)); 
-		
+		return self::query('UPDATE utilisateurs SET NOM=:NOM, PRENOM=:PRENOM, EMAIL=:EMAIL WHERE ID=:ID',array(':ID'=>$id,':NOM'=>$nom,':PRENOM'=>$prenom,':EMAIL'=>$mail));
 	}
 	
 }

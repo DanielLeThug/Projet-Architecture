@@ -22,9 +22,9 @@ class Controller {
 					{
 						require_once("./Views/Bandeau2C_V.php");
 					}
+                    static::doSomething();
                     require_once("./Views/$viewName.php");
 					require_once("./Views/Footer_V.php");
-                    static::doSomething();
                 } else {
                     header("Location: index.php");
                 }
@@ -45,9 +45,9 @@ class Controller {
 		{
 			require_once("./Views/Bandeau2C_V.php");
 		}
+        static::doSomething();
         require_once("./Views/$viewName.php");
 		require_once("./Views/Footer_V.php");
-        static::doSomething();
     }
 
     public static function isLoggedIn() {
