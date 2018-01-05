@@ -11,7 +11,6 @@
 			</thead>
 			<tbody>
 				<?php
-					$users = ViewUser_M::listUser();
 					$i = 0;
 					foreach($users as $user)
 					{
