@@ -5,7 +5,7 @@ Route::set('add_user', function() {
 });
 
 Route::set('view_user', function() {
-    ViewUser_C::CreateView('ViewUser_V');
+    ViewUser_C::CreatePrivateView('ViewUser_V');
 });
 
 Route::set('index.php', function() {
@@ -21,11 +21,11 @@ Route::set('logout', function() {
 });
 
 Route::set('view_lesson', function() {
-    ViewLesson_C::CreateView('ViewLesson_V');
+    ViewLesson_C::CreatePrivateView('ViewLesson_V');
 });
 
 Route::set('add_lesson', function() {
-    AddLesson_C::CreateView('AddLesson_V');
+    AddLesson_C::CreatePrivateView('AddLesson_V');
 });
 
 ?>
