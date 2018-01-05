@@ -43,7 +43,6 @@
 						echo "" . $profil . "</td><td>" . $user[2] . "</td><td>" . $user[3] . "</td><td>" . $user[4] . "</td><td>" . "<a href='edit_user&id=$user[0]'><span class='glyphicon glyphicon-pencil'></span></a>" . "</td><td>" . "<a href='delete_user&id=$user[0]'><span class='glyphicon glyphicon-remove'></span></a>" . "</td></tr>";
 						
 					}
-					require_once("./Views/ViewUser2_V.php");
 				?>
 			</tbody>
     </div>
