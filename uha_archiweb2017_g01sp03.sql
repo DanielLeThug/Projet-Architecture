@@ -84,9 +84,6 @@ CREATE TABLE `cookies` (
 -- Déchargement des données de la table `cookies`
 --
 
-INSERT INTO `cookies` (`id`, `token`, `user_id`) VALUES
-(1, '35bbbdfae44c72d3ff2d28b1dae4d6438042eac0', 1);
-
 -- --------------------------------------------------------
 
 --
