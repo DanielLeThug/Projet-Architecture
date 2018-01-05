@@ -32,6 +32,10 @@ Route::set('add_lesson', function() {
     AddLesson_C::CreatePrivateView('AddLesson_V');
 });
 
+Route::set('validate_payment', function() {
+    ValidatePayment_C::CreatePrivateView('ValidatePayment_V');
+});
+
 Route::set('upload', function() {
     Upload_C::CreateView('Upload_V');
 });
