@@ -2,10 +2,6 @@
 
 class Logout_C extends Controller {
 
-	public static function onLoad()
-	{
-	}
-
     public static function doSomething() {
         if (isset($_COOKIE['PAID'])) {
             Logout_M::deleteCookie(sha1($_COOKIE['PAID']));

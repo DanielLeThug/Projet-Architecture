@@ -2,10 +2,6 @@
 
 class AddUser_C extends Controller {
 
-	public static function onLoad()
-	{
-	}
-
     public static function doSomething() {
         if (isset($_POST['adduser'])) {
 			$profil = $_POST['profil'];
