@@ -14,7 +14,7 @@
 				<li><a href="upload"><span class='glyphicon glyphicon-file'></span> Documents administratifs</a></li> 
 				</ul> 
 				<ul class="nav navbar-nav navbar-right"> 
-				<li> <a href='logout'><span class='glyphicon glyphicon-log-out'></span> Se déconnecter</a> </li>
+				<li> <a href='logout'><span class='glyphicon glyphicon-log-out text-danger'></span> Se déconnecter</a> </li>
 				</ul>
 			</div>
 		  <!-- Navbar content -->
