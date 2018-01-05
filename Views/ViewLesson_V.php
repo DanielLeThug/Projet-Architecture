@@ -20,12 +20,14 @@
 						if($lesson['Virement'] == 1)
 						{
 							$virement = 'Oui';
+							$glyph = 'glyphicon glyphicon-ok';
 						}
 						else
 						{
 							$virement = 'Non';
+							$glyph = 'glyphicon glyphicon-remove';
 						}
-						echo "<tr><td>" . $i . "</td><td>" . $lesson['Intitulé'] . " " . $lesson['Type'] . "</td><td>" . $lesson['Date'] . "</td><td>" . $lesson['Professeur'] . "</td><td>" . $lesson['Salle'] . "</td><td>" . $virement . "</td></tr>";
+						echo "<tr><td>" . $i . "</td><td>" . $lesson['Intitulé'] . " " . $lesson['Type'] . "</td><td>" . $lesson['Date'] . "</td><td>" . $lesson['Professeur'] . "</td><td>" . $lesson['Salle'] . "</td><td>" .  $virement . " " . "<span class='$glyph'></span></td></tr>";
 					}
 				?>
 			</tbody>

@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default" name="edituser">Sauvegarder</button>
+                    <button type="submit" class="btn btn-default" name="edituser"> <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder</button>
                 </div>
             </div>
         </form>

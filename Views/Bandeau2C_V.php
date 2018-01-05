@@ -11,6 +11,7 @@
 						<li><a href="view_user"><span class='glyphicon glyphicon-th-list'></span> Voir les utilisateurs</a></li> 
 					</ul> 
 				</li>
+				<li><a href="upload"><span class='glyphicon glyphicon-file'></span> Documents administratifs</a></li> 
 				</ul> 
 				<ul class="nav navbar-nav navbar-right"> 
 				<li> <a href='logout'><span class='glyphicon glyphicon-log-out'></span> Se déconnecter</a> </li>
@@ -18,3 +19,6 @@
 			</div>
 		  <!-- Navbar content -->
 		</nav>
+
+		
+		
