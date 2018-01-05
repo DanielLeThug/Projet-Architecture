@@ -11,6 +11,7 @@
 			</thead>
 			<tbody>
 				<?php
+					$lessons = ViewLesson_M::listLesson();
 					$i = 0;
 					foreach($lessons as $lesson)
 					{
