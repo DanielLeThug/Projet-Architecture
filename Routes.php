@@ -8,6 +8,10 @@ Route::set('view_user', function() {
     ViewUser_C::CreatePrivateView('ViewUser_V');
 });
 
+Route::set('edit_user', function() {
+    EditUser_C::CreateView('EditUser_V');
+});
+
 Route::set('index.php', function() {
     Index_C::CreateView('Index_V');
 });
