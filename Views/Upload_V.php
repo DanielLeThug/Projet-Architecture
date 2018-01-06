@@ -10,10 +10,10 @@
 					<div class="panel panel-info">
 						<label class="btn btn-primary" for="rib">
 							<input id="rib" name="rib" type="file" style="display:none" 
-							onchange="$('#upload-file-info').html(this.files[0].name)">
+							onchange="$('#upload-file-rib').html(this.files[0].name)">
 							Parcourir
 						</label>
-						<span class='label label-info' id="upload-file-info"></span>
+						<span class='label label-info' id="upload-file-rib"></span>
 					</div>
 				</div>
 			</div>	
@@ -24,10 +24,10 @@
 					<div class="panel panel-info">
 						<label class="btn btn-primary" for="fiche">
 							<input id="fiche" name="fiche" type="file" style="display:none" 
-							onchange="$('#upload-file-info').html(this.files[0].name)">
+							onchange="$('#upload-file-fiche').html(this.files[0].name)">
 							Parcourir
 						</label>
-						<span class='label label-info' id="upload-file-info"></span>
+						<span class='label label-info' id="upload-file-fiche"></span>
 					</div>
 				</div>
 			</div>
@@ -38,10 +38,10 @@
 					<div class="panel panel-info">
 						<label class="btn btn-primary" for="attestation">
 							<input id="attestation" name="attestation" type="file" style="display:none" 
-							onchange="$('#upload-file-info').html(this.files[0].name)">
+							onchange="$('#upload-file-attestation').html(this.files[0].name)">
 							Parcourir
 						</label>
-						<span class='label label-info' id="upload-file-info"></span>
+						<span class='label label-info' id="upload-file-attestation"></span>
 					</div>
 				</div>
 			</div>
