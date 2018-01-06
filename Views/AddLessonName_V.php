@@ -10,7 +10,7 @@
 			</div>
 			<div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default" name="addlessonname">Valider</button>
+                    <button type="submit" class="btn btn-default" name="addlessonname">Ajouter</button>
                 </div>
             </div>
         </form>
