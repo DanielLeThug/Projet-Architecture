@@ -1,6 +1,5 @@
-			<h2 class=panel-title>VALIDER UN PAIEMENT :</h2>
-		</div>
-		<div class="panel-body">
+			<div class="card-header text-white mb-3" style="background-color: #337ab7"><h2>VALIDER UN PAIEMENT :</h2></div>
+		<div class="card-body">
         <form class="form-horizontal" action="validate_payment" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="resp_fina">Responsable financier :</label>

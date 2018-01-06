@@ -1,6 +1,5 @@
-			<h2 class=panel-title>AJOUTER UN COURS :</h2>
-		</div>
-		<div class="panel-body">
+			<div class="card-header text-white mb-3" style="background-color: #337ab7"><h2>AJOUTER UN COURS :</h2></div>
+		<div class="card-body">
         <form class="form-horizontal" action="add_lesson" method="post">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="matiere">Intitulé du cours :</label>
@@ -17,19 +16,19 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="date"><span class='glyphicon glyphicon-calendar'></span> Date :</label>
+				<label class="control-label col-sm-2" for="date"><i class="fa fa-calendar" aria-hidden="true"></i> Date :</label>
 				<div class="col-sm-10">
 					<input type="date" class="form-control" id="date" name="date">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="heure"><span class='glyphicon glyphicon-time'></span> Heure :</label>
+				<label class="control-label col-sm-2" for="heure"><i class="fa fa-clock-o" aria-hidden="true"></i> Heure :</label>
 				<div class="col-sm-10">
 					<input type="time" class="form-control" id="heure" name="heure">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="professeur"><span class='glyphicon glyphicon-user'></span> Professeur :</label>
+				<label class="control-label col-sm-2" for="professeur"><i class="fa fa-user" aria-hidden="true"></i> Professeur :</label>
 				<div class="col-sm-10">
 					<select class="form-control" id="professeur" name="professeur">
 					<?php
@@ -59,7 +58,7 @@
             </div>
 			
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="type_cours"><span class='glyphicon glyphicon-education'></span> Type de cours :</label>
+				<label class="control-label col-sm-2" for="type_cours"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Type de cours :</label>
 				<div class="col-sm-10">
 					<select class="form-control" id="type_cours" name="type_cours">
 					<?php

@@ -1,6 +1,5 @@
-<h2 class=panel-title>EDITER UN COURS :</h2>
-</div>
-<div class="panel-body">
+<div class="card-header text-white mb-3" style="background-color: #337ab7"><h2>EDITER UN COURS :</h2></div>
+<div class="card-body">
 	<?php
 	$lesson = EditLesson_M::getLesson($_GET['id']);
 	?>

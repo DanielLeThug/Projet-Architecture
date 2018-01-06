@@ -1,6 +1,6 @@
-		<h2 class=panel-title>EDITER UN UTILISATEUR :</h2>
-	</div>
-	<div class="panel-body">
+	<div class="card-header">EDITER UN UTILISATEUR :</div>
+
+	<div class="card-body">
 	<?php 
 		$user = EditUser_M::getUser($_GET['id']);
 	?>
