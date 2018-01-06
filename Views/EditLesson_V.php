@@ -4,7 +4,7 @@
 	$lesson = EditLesson_M::getLesson($_GET['id']);
 	?>
 	<form class="form-horizontal" action="add_lesson" method="post">
-		<div class="form-group hidden">
+		<div class="form-group hidden" style="display: none;">
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="id" value="<?php echo $_GET['id'];?>" name="id">
 			</div>
@@ -28,19 +28,19 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="date"><span class='glyphicon glyphicon-calendar'></span> Date :</label>
+			<label class="control-label col-sm-2" for="date"><i class="fa fa-calendar" aria-hidden="true"></i> Date :</label>
 			<div class="col-sm-10">
 				<input type="date" class="form-control" id="date" name="date" value="<?php echo $lesson[1]; ?>">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="heure"><span class='glyphicon glyphicon-time'></span> Heure :</label>
+			<label class="control-label col-sm-2" for="heure"><i class="fa fa-clock-o" aria-hidden="true"></i> Heure :</label>
 			<div class="col-sm-10">
 				<input type="time" class="form-control" id="heure" name="heure" value="<?php echo $lesson[2]; ?>">
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="professeur"><span class='glyphicon glyphicon-user'></span> Professeur :</label>
+			<label class="control-label col-sm-2" for="professeur"><i class="fa fa-user" aria-hidden="true"></i> Professeur :</label>
 			<div class="col-sm-10">
 				<select class="form-control" id="professeur" name="professeur">
 					<?php
@@ -78,7 +78,7 @@
 		</div>
 
 		<div class="form-group">
-			<label class="control-label col-sm-2" for="type_cours"><span class='glyphicon glyphicon-education'></span> Type de cours :</label>
+			<label class="control-label col-sm-2" for="type_cours"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Type de cours :</label>
 			<div class="col-sm-10">
 				<select class="form-control" id="type_cours" name="type_cours">
 					<?php
@@ -98,7 +98,7 @@
 
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default" name="editlesson"> <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder</button>
+				<button type="submit" class="btn btn-default" name="editlesson"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Sauvegarder</button>
 			</div>
 		</div>
 	</form>

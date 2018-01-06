@@ -1,11 +1,11 @@
-	<div class="card-header">EDITER UN UTILISATEUR :</div>
+	<div class="card-header text-white mb-3" style="background-color: #337ab7"><h2>EDITER UN UTILISATEUR :</h2></div>
 
 	<div class="card-body">
 	<?php 
 		$user = EditUser_M::getUser($_GET['id']);
 	?>
         <form class="form-horizontal" action="edit_user&id=<?php echo $user[0][0] ?>" method="post">
-			<div class="form-group hidden">
+			<div class="form-group hidden" style="display: none;">
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="id" value="<?php if (isset($user[0][0])) echo $user[0][0];?>" name="id">
                 </div>
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default" name="edituser"> <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder</button>
+                    <button type="submit" class="btn btn-default" name="edituser"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Sauvegarder</button>
                 </div>
             </div>
         </form>
