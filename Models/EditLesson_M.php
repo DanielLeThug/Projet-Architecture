@@ -11,7 +11,13 @@ class EditLesson_M extends Model {
     }
 
     public static function editLesson($id, $matiere, $date, $heure, $professeur, $salle, $type_cours) {
-        self::query('UPDATE cours SET ID_MATIERE=:ID_MATIERE WHERE ID_DATE=:ID_DATE',array(':PROFIL'=>$uprofil, ':ID'=>$id));
+        $id_date = self::query('SELECT ID FROM dates_de_cours WHERE DATE_C = :date AND HEURE = :heure', array(':date'=>$date, ':heure'=>$heure));
+		if($id_date == NULL)
+		{
+			self::query('INSERT INTO dates_de_cours VALUES (NULL, :date, :heure)', array(':date'=>$date, ':heure'=>$heure));
+			$id_date = self::query('SELECT ID FROM dates_de_cours WHERE DATE_C = :date AND HEURE = :heure', array(':date'=>$date, ':heure'=>$heure));
+		}
+        self::query('UPDATE cours SET ID_MATIERE=:ID_MATIERE, ID_DATE=:ID_DATE, ID_SALLE=:ID_SALLE, ID_VACATAIRE=:ID_VACATAIRE, ID_TYPE_DE_COURS=:ID_TYPE_DE_COURS WHERE ID=:ID', array(':ID_MATIERE'=>$matiere, ':ID_DATE'=>$id_date[0][0], ':ID_SALLE'=>$salle, ':ID_VACATAIRE'=>$professeur, ':ID_TYPE_DE_COURS'=>$type_cours, ':ID'=>$id));
     }
 
 }
