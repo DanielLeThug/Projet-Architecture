@@ -13,7 +13,7 @@
 				  <!-- Menu des cours -->
 				  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  Menu des cours
+					  <i class="fa fa-book" aria-hidden="true"></i> Menu des cours 
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="add_lesson"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter un cours</a>
@@ -23,7 +23,7 @@
 				  <!-- Menu des utilisateurs -->
 				  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					  Menu des utilisateurs
+					  <i class="fa fa-user" aria-hidden="true"></i> Menu des utilisateurs
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					  <a class="dropdown-item" href="add_user"><i class="fa fa-plus" aria-hidden="true"></i> Ajouter un utilisateur</a>
@@ -32,7 +32,7 @@
 				  </li>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
-				  <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Se déconnecter</button>
+				  <button class="btn btn-danger my-2 my-sm-0" type="submit"><i class="fa fa-sign-out" aria-hidden="true"></i> Se déconnecter</button>
 				</form>
 			  </div>
 			</nav>
