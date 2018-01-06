@@ -3,12 +3,12 @@
 class ViewLesson_M extends Model {
 
 	public static function listLesson() {
-		return self::query("SELECT utilisateurs.ID As Id, matieres.LIBELLÉ AS Intitulé,
+		return self::query("SELECT cours.ID As Id, matieres.LIBELLÉ AS Intitulé,
 							types_de_cours.LIBELLÉ As Type,
 							cours.EFFECTUE As Virement,
 							cours.ID As id_cours,
 							CONCAT(dates_de_cours.DATE_C, ' ' ,dates_de_cours.HEURE) As Date,
-							CONCAT(UPPER(utilisateurs.NOM), ' ' ,utilisateurs.PRENOM) As Professeur,
+							CONCAT(utilisateurs.PRENOM, ' ' ,utilisateurs.NOM) As Professeur,
 							CONCAT(salles.LIBELLÉ, ' Bât ', batiments.LIBELLÉ) As Salle FROM cours
 							LEFT JOIN matieres ON matieres.ID = cours.ID_MATIERE
 							LEFT JOIN types_de_cours ON types_de_cours.ID = cours.ID_TYPE_DE_COURS
