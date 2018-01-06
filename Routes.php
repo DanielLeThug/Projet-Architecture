@@ -25,11 +25,11 @@ Route::set('login', function() {
 });
 
 Route::set('logout', function() {
-    Logout_C::CreateView('Logout_V');
+    Logout_C::CreatePrivateView('Logout_V');
 });
 
 Route::set('view_lesson', function() {
-    ViewLesson_C::CreateView('ViewLesson_V');
+    ViewLesson_C::CreatePrivateView('ViewLesson_V');
 });
 
 Route::set('add_lesson', function() {
@@ -53,7 +53,7 @@ Route::set('add_payment', function() {
 });
 
 Route::set('upload', function() {
-    Upload_C::CreateView('Upload_V');
+    Upload_C::CreatePrivateView('Upload_V');
 });
 
 ?>
