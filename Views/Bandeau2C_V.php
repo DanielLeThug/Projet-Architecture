@@ -7,7 +7,7 @@
 					</ul> 
 				</li>
 				<?php
-					if ($profil[0]['profil'] != 1)
+					if ($profil[0]['profil'] == 1)
 					{
 				?>
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu des utilisateurs<span class="caret"></span></a> 

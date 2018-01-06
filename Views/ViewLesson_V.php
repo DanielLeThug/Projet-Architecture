@@ -10,7 +10,7 @@
 					<th scope="col"><span class='glyphicon glyphicon-user'></span> Professeur</th>
 					<th scope="col">Salle</th>
 					<?php
-						if($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 2 || $GLOBALS['profil'][0]['profil'] == 5)
+						if($profil[0]['profil'] == 1 || $profil[0]['profil'] == 2 || $profil[0]['profil'] == 5)
 						{
 					?>
 					<th scope="col">Virement Effectué</th>
@@ -18,7 +18,7 @@
 						}
 					?>
 					<?php
-						if($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4)
+						if($profil[0]['profil'] == 1 || $profil[0]['profil'] == 3 || $profil[0]['profil'] == 4)
 						{
 					?>
 					<th scope="col"><span class='glyphicon glyphicon-cog'></span></th>
