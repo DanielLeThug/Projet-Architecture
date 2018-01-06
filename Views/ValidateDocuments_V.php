@@ -20,6 +20,7 @@
                 <tr><td><?php echo $i;?>
                 </td><td><?php echo $document['User'];?>
                 </td><td><a href='download&filename=<?php echo $document['Filename'];?>'><?php echo $document['Filename'];?></a>
+                </td><td><a href='validate_documents&id=<?php echo $document['Id'];?>'><span class='glyphicon glyphicon-ok'></span></a>
                 </td></tr><?php
             }
             ?>
