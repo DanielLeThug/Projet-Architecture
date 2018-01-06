@@ -38,4 +38,11 @@ if (!in_array($_GET['url'], Route::$validRoutes)) {
 	}
     require_once("./Views/404_V.php");
 }
+else
+{
+	if(mb_strimwidth($_GET['url'], 0, 39) == "localhost/Projet-Architecture/fichiers/")
+	{
+		require_once("./fichiers/" . mb_strimwidth($_GET['url'], 39, strlen($_GET['url'])));
+	}
+}
 ?>

@@ -1,5 +1,5 @@
 <?php
-$file = 'fichiers/rib1.jpg';
+$file = 'rib1.pdf';
 
 if (file_exists($file)) {
     header('Content-Description: File Transfer');

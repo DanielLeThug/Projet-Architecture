@@ -57,7 +57,7 @@ Route::set('upload', function() {
 });
 
 Route::set('download', function() {
-    Download_C::CreateView('Download_V');
+    Download_C::CreateDownloadView('Download_V');
 });
 
 ?>
