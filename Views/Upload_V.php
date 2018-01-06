@@ -11,7 +11,7 @@
 						<label class="btn btn-primary" for="rib">
 							<input id="rib" name="rib" type="file" style="display:none" 
 							onchange="$('#upload-file-rib').html(this.files[0].name)">
-							Parcourir
+							<span class="glyphicon glyphicon-folder-open"></span> Parcourir...
 						</label>
 						<span class='label label-info' id="upload-file-rib"></span>
 					</div>
@@ -25,7 +25,7 @@
 						<label class="btn btn-primary" for="fiche">
 							<input id="fiche" name="fiche" type="file" style="display:none" 
 							onchange="$('#upload-file-fiche').html(this.files[0].name)">
-							Parcourir
+							<span class="glyphicon glyphicon-folder-open"></span> Parcourir...
 						</label>
 						<span class='label label-info' id="upload-file-fiche"></span>
 					</div>
@@ -39,7 +39,7 @@
 						<label class="btn btn-primary" for="attestation">
 							<input id="attestation" name="attestation" type="file" style="display:none" 
 							onchange="$('#upload-file-attestation').html(this.files[0].name)">
-							Parcourir
+							<span class="glyphicon glyphicon-folder-open"></span> Parcourir...
 						</label>
 						<span class='label label-info' id="upload-file-attestation"></span>
 					</div>
