@@ -44,6 +44,10 @@ Route::set('validate_payment', function() {
     ValidatePayment_C::CreateFinancialView('ValidatePayment_V');
 });
 
+Route::set('validate_documents', function() {
+    ValidateDocuments_C::CreatePrivateView('ValidateDocuments_V');
+});
+
 Route::set('add_payment', function() {
     AddPayment_C::CreateFinancialView('AddPayment_V');
 });
