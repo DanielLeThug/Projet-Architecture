@@ -26,7 +26,7 @@
 				<?php
 					}
 				?>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-lock'></span> Menu Administratif<span class="caret"></span></a> 
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-wrench'></span> Menu Administratif<span class="caret"></span></a> 
 					<ul class="dropdown-menu">
 						<li><a href="upload"><span class='glyphicon glyphicon-file'></span> Documents administratifs</a></li>
 						<?php
