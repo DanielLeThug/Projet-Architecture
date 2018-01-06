@@ -106,7 +106,7 @@ INSERT INTO `cours` (`ID_MATIERE`, `ID_DATE`, `ID_SALLE`, `ID_VACATAIRE`, `ID_VI
 (2, 2, 2, 1, NULL, 0, 2, 2),
 (2, 3, 2, 1, NULL, 0, 2, 3),
 (3, 4, 4, 1, NULL, 0, 1, 4),
-(4, 5, 6, 1, NULL, 0, 3, 5);
+(4, 5, 6, 3, NULL, 0, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -252,7 +252,8 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`ID`, `PROFIL`, `NOM`, `PRENOM`, `EMAIL`, `MDP`) VALUES
 (1, 1, 'Gates', 'Bill', 'admin@root.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m'),
-(2, 1, 'Resp', 'Fina', 'resp@fina.com', '$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
+(2, 1, 'Resp', 'Fina', 'resp@fina.com', '$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m'),
+(3, 6, 'Hater', 'VAC', 'Hater@VAC.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
 
 -- --------------------------------------------------------
 
@@ -271,7 +272,8 @@ CREATE TABLE `virements` (
 --
 
 INSERT INTO `virements` (`ID`, `DATE_V`, `ID_RESPONSABLE_FINANCIER`) VALUES
-(1, '2018-01-08', 2);
+(1, '2018-01-08', 2),
+(2, '2017-12-07', 2);
 
 --
 -- Index pour les tables déchargées
