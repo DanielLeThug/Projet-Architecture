@@ -8,10 +8,10 @@ class Controller {
 
         if ($userid) {
 
-            $profil = Model::getProfil($userid);
-            if ($profil) {
+            $GLOBALS['profil'] = Model::getProfil($userid);
+            if ($GLOBALS['profil']) {
                 // Si l'utilisateur est un administrateur
-                if ($profil[0]['profil'] == 1) {
+                if ($GLOBALS['profil'][0]['profil'] == 1) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
@@ -40,10 +40,10 @@ class Controller {
 
         if ($userid) {
 
-            $profil = Model::getProfil($userid);
-            if ($profil) {
+            $GLOBALS['profil'] = Model::getProfil($userid);
+            if ($GLOBALS['profil']) {
                 // Si l'utilisateur est un administrateur
-                if ($profil[0]['profil'] == 1) {
+                if ($GLOBALS['profil'][0]['profil'] == 1) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
@@ -72,10 +72,10 @@ class Controller {
 
         if ($userid) {
 
-            $profil = Model::getProfil($userid);
-            if ($profil) {
+            $GLOBALS['profil'] = Model::getProfil($userid);
+            if ($GLOBALS['profil']) {
                 // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
-                if ($profil[0]['profil'] == 1 || $profil[0]['profil'] == 2 || $profil[0]['profil'] == 5) {
+                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 2 || $GLOBALS['profil'][0]['profil'] == 5) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
@@ -104,10 +104,10 @@ class Controller {
 
         if ($userid) {
 
-            $profil = Model::getProfil($userid);
-            if ($profil) {
+			$GLOBALS['profil'] = Model::getProfil($userid);
+            if ($GLOBALS['profil']) {
                 // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
-                if ($profil[0]['profil'] == 1 || $profil[0]['profil'] == 3 || $profil[0]['profil'] == 4) {
+                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
@@ -133,6 +133,8 @@ class Controller {
     public static function CreateView($viewName) {
 		require_once("./Views/Header_V.php");
 		require_once("./Views/Bandeau_V.php");
+        $userid = self::isLoggedIn();
+		$GLOBALS['profil'] = Model::getProfil($userid);
 		if (isset($_COOKIE['PAID_']))
 		{
 			require_once("./Views/Bandeau2C_V.php");

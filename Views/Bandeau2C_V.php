@@ -1,13 +1,20 @@
 				
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-book'></span> Menu des cours<span class="caret"></span></a> 
-					<ul class="dropdown-menu"> 
+					<ul class="dropdown-menu">
+					<?php
+						if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4)
+						{
+					?>
 						<li><a href="add_lesson"><span class='glyphicon glyphicon-plus'></span> Ajouter un cours</a></li>
 						<li><a href="add_lesson_name"><span class='glyphicon glyphicon-plus'></span> Ajouter une matière</a></li>
+					<?php
+						}
+					?>
 						<li><a href="view_lesson"><span class='glyphicon glyphicon-th-list'></span> Voir les cours</a></li>
 					</ul> 
 				</li>
 				<?php
-					if ($profil[0]['profil'] == 1)
+					if ($GLOBALS['profil'][0]['profil'] == 1)
 					{
 				?>
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu des utilisateurs<span class="caret"></span></a> 
