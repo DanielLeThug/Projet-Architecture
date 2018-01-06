@@ -12,7 +12,7 @@
 						<li><a href="view_user"><span class='glyphicon glyphicon-th-list'></span> Voir les utilisateurs</a></li> 
 					</ul>
 				</li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu Administratifs<span class="caret"></span></a> 
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu Administratif<span class="caret"></span></a> 
 					<ul class="dropdown-menu">
 						<li><a href="upload"><span class='glyphicon glyphicon-file'></span> Documents administratifs</a></li>
 						<li><a href="add_payment"><span class='glyphicon glyphicon-file'></span> Ajouter Virement</a></li>
