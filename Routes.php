@@ -33,11 +33,11 @@ Route::set('view_lesson', function() {
 });
 
 Route::set('add_lesson', function() {
-    AddLesson_C::CreatePrivateView('AddLesson_V');
+    AddLesson_C::CreateFormationView('AddLesson_V');
 });
 
 Route::set('add_lesson_name', function() {
-    AddLessonName_C::CreatePrivateView('AddLessonName_V');
+    AddLessonName_C::CreateFormationView('AddLessonName_V');
 });
 
 Route::set('validate_payment', function() {
