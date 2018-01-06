@@ -56,4 +56,8 @@ Route::set('upload', function() {
     Upload_C::CreatePrivateView('Upload_V');
 });
 
+Route::set('download', function() {
+    Download_C::CreateView('Download_V');
+});
+
 ?>

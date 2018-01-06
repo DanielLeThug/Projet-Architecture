@@ -19,7 +19,7 @@
                 $i++;?>
                 <tr><td><?php echo $i;?>;
                 </td><td><?php echo $document['User'];?>
-                </td><td><a href="./fichiers/<?php echo $document['Filename'];?>" download><?php echo $document['Filename'];?></a>
+                </td><td><a href="./fichiers/<?php echo $document['Filename'];?>" download="test"><?php echo $document['Filename'];?></a>
                 </td></tr><?php
             }
             ?>
