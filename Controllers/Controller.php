@@ -122,6 +122,16 @@ class Controller {
             header("Location: index.php");
         }
     }
+	
+	public static function CreateDownloadView($viewName) {
+		$userid = self::isLoggedIn();
+
+        if ($userid) {
+			require_once("./Views/$viewName.php");
+        } else {
+            header("Location: index.php");
+        }
+    }
 
     public static function CreateView($viewName) {
 		require_once("./Views/Header_V.php");

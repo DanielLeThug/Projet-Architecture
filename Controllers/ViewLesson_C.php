@@ -8,8 +8,8 @@ class ViewLesson_C extends Controller {
 		if(isset($_GET['id']))
 		{
 			$user = EditLesson_M::deleteLesson($_GET['id']);
+			header('Location: view_lesson');
 		}
-		$userid = self::isLoggedIn();
 	}
 
 }

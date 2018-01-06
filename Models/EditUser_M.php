@@ -7,10 +7,6 @@ class EditUser_M extends Model {
 
 	}
 
-	public static function deleteUser($id) {
-		self::query('DELETE FROM utilisateurs WHERE ID=:ID',array(':ID'=>$id));
-	}
-
 	public function editProfile($id, $uprofil){
 		self::query('UPDATE utilisateurs SET PROFIL=:PROFIL WHERE ID=:ID',array(':PROFIL'=>$uprofil, ':ID'=>$id));
 	}
