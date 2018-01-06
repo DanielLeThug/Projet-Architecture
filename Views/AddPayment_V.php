@@ -1,4 +1,4 @@
-			<h2 class=panel-title>AJOUTER UN PAIEMENT :</h2>
+			<h2 class=panel-title>AJOUTER UN PAIEMENT (SIMULATION) :</h2>
 		</div>
 		<div class="panel-body">
         <form class="form-horizontal" action="add_payment" method="post">

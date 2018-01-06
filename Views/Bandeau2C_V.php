@@ -1,8 +1,9 @@
 				
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-book'></span> Menu des cours<span class="caret"></span></a> 
 					<ul class="dropdown-menu"> 
-						<li><a href="add_lesson"><span class='glyphicon glyphicon-plus'></span> Ajouter un cours</a></li> 
-						<li><a href="view_lesson"><span class='glyphicon glyphicon-th-list'></span> Voir les cours</a></li> 
+						<li><a href="add_lesson"><span class='glyphicon glyphicon-plus'></span> Ajouter un cours</a></li>
+						<li><a href="add_lesson_name"><span class='glyphicon glyphicon-plus'></span> Ajouter une matière</a></li>
+						<li><a href="view_lesson"><span class='glyphicon glyphicon-th-list'></span> Voir les cours</a></li>
 					</ul> 
 				</li>
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu des utilisateurs<span class="caret"></span></a> 
