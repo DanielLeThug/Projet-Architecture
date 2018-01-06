@@ -13,7 +13,7 @@ Route::set('edit_user', function() {
 });
 
 Route::set('edit_lesson', function() {
-    EditLesson_C::CreatePrivateView('EditLesson_V');
+    EditLesson_C::CreateFormationView('EditLesson_V');
 });
 
 Route::set('index.php', function() {
@@ -33,15 +33,15 @@ Route::set('view_lesson', function() {
 });
 
 Route::set('add_lesson', function() {
-    AddLesson_C::CreatePrivateView('AddLesson_V');
+    AddLesson_C::CreateFormationView('AddLesson_V');
 });
 
 Route::set('add_lesson_name', function() {
-    AddLessonName_C::CreatePrivateView('AddLessonName_V');
+    AddLessonName_C::CreateFormationView('AddLessonName_V');
 });
 
 Route::set('validate_payment', function() {
-    ValidatePayment_C::CreatePrivateView('ValidatePayment_V');
+    ValidatePayment_C::CreateFinancialView('ValidatePayment_V');
 });
 
 Route::set('validate_documents', function() {
@@ -49,7 +49,7 @@ Route::set('validate_documents', function() {
 });
 
 Route::set('add_payment', function() {
-    AddPayment_C::CreatePrivateView('AddPayment_V');
+    AddPayment_C::CreateFinancialView('AddPayment_V');
 });
 
 Route::set('upload', function() {
