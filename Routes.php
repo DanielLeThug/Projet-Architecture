@@ -41,11 +41,11 @@ Route::set('add_lesson_name', function() {
 });
 
 Route::set('validate_payment', function() {
-    ValidatePayment_C::CreatePrivateView('ValidatePayment_V');
+    ValidatePayment_C::CreateFinancialView('ValidatePayment_V');
 });
 
 Route::set('add_payment', function() {
-    AddPayment_C::CreatePrivateView('AddPayment_V');
+    AddPayment_C::CreateFinancialView('AddPayment_V');
 });
 
 Route::set('upload', function() {

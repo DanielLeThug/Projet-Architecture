@@ -65,6 +65,38 @@ class Controller {
             header("Location: index.php");
         }
     }
+	
+	public static function CreateFinancialView($viewName) {
+
+        $userid = self::isLoggedIn();
+
+        if ($userid) {
+
+            $profil = Model::getProfil($userid);
+            if ($profil) {
+                // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
+                if ($profil[0]['profil'] == 1 || $profil[0]['profil'] == 2 || $profil[0]['profil'] == 5) {
+					require_once("./Views/Header_V.php");
+					require_once("./Views/Bandeau_V.php");
+					if (isset($_COOKIE['PAID_']))
+					{
+						require_once("./Views/Bandeau2CAdmin_V.php");
+					}
+					else
+					{
+						require_once("./Views/Bandeau2DC_V.php");
+					}
+                    static::doSomething();
+                    require_once("./Views/$viewName.php");
+					require_once("./Views/Footer_V.php");
+                } else {
+                    header("Location: index.php");
+                }
+            }
+        } else {
+            header("Location: index.php");
+        }
+    }
 
     public static function CreateView($viewName) {
 		require_once("./Views/Header_V.php");
