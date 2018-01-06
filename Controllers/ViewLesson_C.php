@@ -7,6 +7,7 @@ class ViewLesson_C extends Controller {
 		{
 			$user = EditLesson_M::deleteLesson($_GET['id']);
 		}
+		$userid = self::isLoggedIn();
 	}
 
 }
