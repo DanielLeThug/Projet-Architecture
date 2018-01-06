@@ -107,7 +107,7 @@ class Controller {
 			$GLOBALS['profil'] = Model::getProfil($userid);
             if ($GLOBALS['profil']) {
                 // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
-                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4) {
+                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 2 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
