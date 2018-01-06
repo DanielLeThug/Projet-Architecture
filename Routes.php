@@ -40,6 +40,10 @@ Route::set('validate_payment', function() {
     ValidatePayment_C::CreatePrivateView('ValidatePayment_V');
 });
 
+Route::set('add_payment', function() {
+    AddPayment_C::CreatePrivateView('AddPayment_V');
+});
+
 Route::set('upload', function() {
     Upload_C::CreateView('Upload_V');
 });
