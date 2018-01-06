@@ -23,11 +23,11 @@ class Login_C extends Controller {
 
                     header('Location: index.php');
                 } else {
-                    echo "Mot de passe incorrect.";
+                    echo "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Erreur!</strong> Mot de passe incorrect.</div>";
                 }
 
             } else {
-                echo "Cet utilisateur n'existe pas.";
+                echo "<div class='alert alert-danger alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Erreur!</strong> Cet utilisateur n'existe pas.</div>";
             }
         }
 
