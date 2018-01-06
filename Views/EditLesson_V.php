@@ -4,7 +4,7 @@
 	<?php
 	$lesson = EditLesson_M::getLesson($_GET['id']);
 	?>
-	<form class="form-horizontal" action="add_lesson" method="post">
+	<form class="form-horizontal" action="edit_lesson&id=<?php echo $_GET['id'] ?>" method="post">
 		<div class="form-group hidden">
 			<div class="col-sm-10">
 				<input type="text" class="form-control" id="id" value="<?php echo $_GET['id'];?>" name="id">
