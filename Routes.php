@@ -13,7 +13,7 @@ Route::set('edit_user', function() {
 });
 
 Route::set('edit_lesson', function() {
-    EditLesson_C::CreatePrivateView('EditLesson_V');
+    EditLesson_C::CreateFormationView('EditLesson_V');
 });
 
 Route::set('index.php', function() {

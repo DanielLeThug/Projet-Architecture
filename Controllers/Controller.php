@@ -16,7 +16,7 @@ class Controller {
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
 					{
-						require_once("./Views/Bandeau2CAdmin_V.php");
+						require_once("./Views/Bandeau2C_V.php");
 					}
 					else
 					{
@@ -48,7 +48,7 @@ class Controller {
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
 					{
-						require_once("./Views/Bandeau2CAdmin_V.php");
+						require_once("./Views/Bandeau2C_V.php");
 					}
 					else
 					{
@@ -80,7 +80,7 @@ class Controller {
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
 					{
-						require_once("./Views/Bandeau2CAdmin_V.php");
+						require_once("./Views/Bandeau2C_V.php");
 					}
 					else
 					{
@@ -112,7 +112,7 @@ class Controller {
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
 					{
-						require_once("./Views/Bandeau2CAdmin_V.php");
+						require_once("./Views/Bandeau2C_V.php");
 					}
 					else
 					{
@@ -135,7 +135,7 @@ class Controller {
 		require_once("./Views/Bandeau_V.php");
 		if (isset($_COOKIE['PAID_']))
 		{
-			require_once("./Views/Bandeau2CAdmin_V.php");
+			require_once("./Views/Bandeau2C_V.php");
 		}
 		else
 		{

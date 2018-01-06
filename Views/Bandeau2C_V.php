@@ -6,12 +6,19 @@
 						<li><a href="view_lesson"><span class='glyphicon glyphicon-th-list'></span> Voir les cours</a></li>
 					</ul> 
 				</li>
+				<?php
+					if ($profil[0]['profil'] != 1)
+					{
+				?>
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu des utilisateurs<span class="caret"></span></a> 
 					<ul class="dropdown-menu"> 
 						<li><a href="add_user"><span class='glyphicon glyphicon-plus'></span> Ajouter un utilisateur</a></li> 
 						<li><a href="view_user"><span class='glyphicon glyphicon-th-list'></span> Voir les utilisateurs</a></li> 
 					</ul>
 				</li>
+				<?php
+					}
+				?>
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu Administratif<span class="caret"></span></a> 
 					<ul class="dropdown-menu">
 						<li><a href="upload"><span class='glyphicon glyphicon-file'></span> Documents administratifs</a></li>

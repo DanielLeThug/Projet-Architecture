@@ -15,9 +15,8 @@
 			</thead>
 			<tbody>
 				<?php
-					$users = ViewUser_M::listUser();
 					$i = 0;
-					foreach($users as $user)
+					foreach($GLOBALS['users'] as $user)
 					{
 						$i++;
 						echo "<tr><td>" . $i . "</td><td>";
