@@ -9,26 +9,19 @@ class Controller {
         if ($userid) {
 
             $GLOBALS['profil'] = Model::getProfil($userid);
-            if ($GLOBALS['profil']) {
-                // Si l'utilisateur est un administrateur
-                if ($GLOBALS['profil'][0]['profil'] == 1) {
-					require_once("./Views/Header_V.php");
-					require_once("./Views/Bandeau_V.php");
-					if (isset($_COOKIE['PAID_']))
-					{
-						require_once("./Views/Bandeau2C_V.php");
-					}
-					else
-					{
-						require_once("./Views/Bandeau2DC_V.php");
-					}
-                    static::doSomething();
-                    require_once("./Views/$viewName.php");
-					require_once("./Views/Footer_V.php");
-                } else {
-                    header("Location: index.php");
-                }
-            }
+			require_once("./Views/Header_V.php");
+			require_once("./Views/Bandeau_V.php");
+			if (isset($_COOKIE['PAID_']))
+			{
+				require_once("./Views/Bandeau2C_V.php");
+			}
+			else
+			{
+				require_once("./Views/Bandeau2DC_V.php");
+			}
+			static::doSomething();
+			require_once("./Views/$viewName.php");
+			require_once("./Views/Footer_V.php");
         } else {
             header("Location: index.php");
         }
@@ -107,7 +100,7 @@ class Controller {
 			$GLOBALS['profil'] = Model::getProfil($userid);
             if ($GLOBALS['profil']) {
                 // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
-                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4) {
+                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 2 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))

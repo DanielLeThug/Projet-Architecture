@@ -28,6 +28,26 @@
                     <input type="email" class="form-control" id="email" value="<?php if (isset($user[0][4])) echo $user[0][4];?>" name="email">
                 </div>
             </div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="utilisateur">Type d'utilisateur :</label>
+				<div class="col-sm-10">
+					<select name="profil" id="profil" class="form-control" size="1">
+					<?php 
+						if (isset($user[0][1]))
+						{
+					?>
+					<option value="1" <?php if ($user[0][1] == 1) { ?>selected<?php } ?>>Administrateur
+					<option value="2" <?php if ($user[0][1] == 2) { ?>selected<?php } ?>>Contrôle de Gestion
+					<option value="3" <?php if ($user[0][1] == 3) { ?>selected<?php } ?>>Responsable de Formation
+					<option value="4" <?php if ($user[0][1] == 4) { ?>selected<?php } ?>>Responsable Administratif de Formation
+					<option value="5" <?php if ($user[0][1] == 5) { ?>selected<?php } ?>>Responsable Financier
+					<option value="6" <?php if ($user[0][1] == 6) { ?>selected<?php } ?>>Vacataire
+					<?php
+						}
+					?>
+					</select>
+				</div>
+            </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default" name="edituser"> <span class="glyphicon glyphicon-floppy-disk"></span> Sauvegarder</button>

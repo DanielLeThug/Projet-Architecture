@@ -53,7 +53,7 @@ Route::set('add_payment', function() {
 });
 
 Route::set('upload', function() {
-    Upload_C::CreateView('Upload_V');
+    Upload_C::CreatePrivateView('Upload_V');
 });
 
 Route::set('download', function() {
