@@ -45,7 +45,7 @@ Route::set('validate_payment', function() {
 });
 
 Route::set('validate_documents', function() {
-    ValidateDocuments_C::CreatePrivateView('ValidateDocuments_V');
+    ValidateDocuments_C::CreateExecutiveView('ValidateDocuments_V');
 });
 
 Route::set('add_payment', function() {

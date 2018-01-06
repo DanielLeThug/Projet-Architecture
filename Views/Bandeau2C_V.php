@@ -29,7 +29,20 @@
 				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-user'></span> Menu Administratif<span class="caret"></span></a> 
 					<ul class="dropdown-menu">
 						<li><a href="upload"><span class='glyphicon glyphicon-file'></span> Documents administratifs</a></li>
+						<?php
+							if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 4)
+							{
+						?>
+						<li><a href="validate_documents"><span class='glyphicon glyphicon-file'></span> Valider Documents administratifs</a></li>
+						<?php
+							}
+							if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 2 || $GLOBALS['profil'][0]['profil'] == 5)
+							{
+						?>
 						<li><a href="add_payment"><span class='glyphicon glyphicon-file'></span> Ajouter Virement</a></li>
+						<?php
+							}
+						?>
 					</ul> 
 				</li>
 			</ul>

@@ -91,6 +91,38 @@ class Controller {
         }
     }
 	
+	public static function CreateExecutiveView($viewName) {
+
+        $userid = self::isLoggedIn();
+
+        if ($userid) {
+
+            $GLOBALS['profil'] = Model::getProfil($userid);
+            if ($GLOBALS['profil']) {
+                // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
+                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 4) {
+					require_once("./Views/Header_V.php");
+					require_once("./Views/Bandeau_V.php");
+					if (isset($_COOKIE['PAID_']))
+					{
+						require_once("./Views/Bandeau2C_V.php");
+					}
+					else
+					{
+						require_once("./Views/Bandeau2DC_V.php");
+					}
+                    static::doSomething();
+                    require_once("./Views/$viewName.php");
+					require_once("./Views/Footer_V.php");
+                } else {
+                    header("Location: index.php");
+                }
+            }
+        } else {
+            header("Location: index.php");
+        }
+    }
+	
 	public static function CreateFormationView($viewName) {
 
         $userid = self::isLoggedIn();
