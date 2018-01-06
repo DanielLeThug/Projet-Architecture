@@ -6,6 +6,7 @@ class EditUser_C extends Controller {
 		if(isset($_POST['edituser']))
 		{
 			$id = $_POST['id'];
+			$profil = $_POST['profil'];
 			$nom = $_POST['nom'];
 			$prenom = $_POST['prenom'];
 			$email = $_POST['email'];
@@ -15,7 +16,7 @@ class EditUser_C extends Controller {
 				{
 					if (filter_var($email, FILTER_VALIDATE_EMAIL))
 					{
-						EditUser_M::editUser($id, $nom, $prenom, $email);
+						EditUser_M::editUser($id, $profil, $nom, $prenom, $email);
 						Header('Location: ./view_user');
 					}
 					else
