@@ -26,7 +26,7 @@
 				<?php
 					}
 				?>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-lock'></span> Menu Administratif<span class="caret"></span></a> 
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class='glyphicon glyphicon-wrench'></span> Menu Administratif<span class="caret"></span></a> 
 					<ul class="dropdown-menu">
 						<li><a href="upload"><span class='glyphicon glyphicon-file'></span> Documents administratifs</a></li>
 						<?php
@@ -46,7 +46,8 @@
 					</ul> 
 				</li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right"> 
+			<ul class="nav navbar-nav navbar-right">
+				<li> <a href='change_password'><span class='glyphicon glyphicon-lock'></span> Changer mot de passe</a> </li>
 				<li> <a href='logout'><span class='glyphicon glyphicon-log-out text-danger'></span> Se déconnecter</a> </li>
 			</ul>
 		</div>

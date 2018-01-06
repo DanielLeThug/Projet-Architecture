@@ -28,6 +28,10 @@ Route::set('logout', function() {
     Logout_C::CreatePrivateView('Logout_V');
 });
 
+Route::set('change_password', function() {
+    PasswordChange_C::CreatePrivateView('PasswordChange_V');
+});
+
 Route::set('view_lesson', function() {
     ViewLesson_C::CreatePrivateView('ViewLesson_V');
 });

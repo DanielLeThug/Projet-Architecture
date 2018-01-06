@@ -252,7 +252,7 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`ID`, `PROFIL`, `NOM`, `PRENOM`, `EMAIL`, `MDP`) VALUES
 (1, 1, 'Gates', 'Bill', 'admin@root.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m'),
-(2, 1, 'Resp', 'Fina', 'resp@fina.com', '$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m'),
+(2, 1, 'Resp', 'Fina', 'resp@fina.com', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m'),
 (3, 6, 'Hater', 'VAC', 'Hater@VAC.fr', '$2y$10$UIlO5RuFrmIXazBRD4aDheRl68dwkZ9cLaFXFF9XkJd/SGdX2Vt6m');
 
 -- --------------------------------------------------------
