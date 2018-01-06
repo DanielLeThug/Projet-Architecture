@@ -5,7 +5,8 @@ class Controller {
     public static function CreatePrivateView($viewName) {
 
         $userid = self::isLoggedIn();
-
+		
+		// si l'utilisateur est connecté
         if ($userid) {
 
             $GLOBALS['profil'] = Model::getProfil($userid);
@@ -67,7 +68,7 @@ class Controller {
 
             $GLOBALS['profil'] = Model::getProfil($userid);
             if ($GLOBALS['profil']) {
-                // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
+                // Si l'utilisateur est un administrateur,  un contrôle de gestion ou un responsable financier
                 if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 2 || $GLOBALS['profil'][0]['profil'] == 5) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
@@ -99,7 +100,7 @@ class Controller {
 
             $GLOBALS['profil'] = Model::getProfil($userid);
             if ($GLOBALS['profil']) {
-                // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
+                // Si l'utilisateur est un administrateur ou un responsable administratif de formation
                 if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 4) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
@@ -131,8 +132,8 @@ class Controller {
 
 			$GLOBALS['profil'] = Model::getProfil($userid);
             if ($GLOBALS['profil']) {
-                // Si l'utilisateur est un administrateur, un responsable financier ou un contrôle de gestion
-                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 2 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4) {
+                // Si l'utilisateur est un administrateur, un responsable administratif de formation ou un responsable de formation
+                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 3 || $GLOBALS['profil'][0]['profil'] == 4) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
@@ -159,7 +160,13 @@ class Controller {
 		$userid = self::isLoggedIn();
 
         if ($userid) {
-			require_once("./Views/$viewName.php");
+			$GLOBALS['profil'] = Model::getProfil($userid);
+            if ($GLOBALS['profil']) {
+                // Si l'utilisateur est un administrateur ou un responsable administratif de formation
+                if ($GLOBALS['profil'][0]['profil'] == 1 || $GLOBALS['profil'][0]['profil'] == 4) {
+					require_once("./Views/$viewName.php");
+				}
+			}
         } else {
             header("Location: index.php");
         }
