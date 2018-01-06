@@ -14,13 +14,45 @@ class Controller {
                 if ($profil[0]['profil'] == 1) {
 					require_once("./Views/Header_V.php");
 					require_once("./Views/Bandeau_V.php");
-					if (!isset($_COOKIE['PAID_']))
+					if (isset($_COOKIE['PAID_']))
+					{
+						require_once("./Views/Bandeau2CAdmin_V.php");
+					}
+					else
 					{
 						require_once("./Views/Bandeau2DC_V.php");
 					}
+                    static::doSomething();
+                    require_once("./Views/$viewName.php");
+					require_once("./Views/Footer_V.php");
+                } else {
+                    header("Location: index.php");
+                }
+            }
+        } else {
+            header("Location: index.php");
+        }
+    }
+	
+	public static function CreateAdminView($viewName) {
+
+        $userid = self::isLoggedIn();
+
+        if ($userid) {
+
+            $profil = Model::getProfil($userid);
+            if ($profil) {
+                // Si l'utilisateur est un administrateur
+                if ($profil[0]['profil'] == 1) {
+					require_once("./Views/Header_V.php");
+					require_once("./Views/Bandeau_V.php");
 					if (isset($_COOKIE['PAID_']))
 					{
-						require_once("./Views/Bandeau2C_V.php");
+						require_once("./Views/Bandeau2CAdmin_V.php");
+					}
+					else
+					{
+						require_once("./Views/Bandeau2DC_V.php");
 					}
                     static::doSomething();
                     require_once("./Views/$viewName.php");
@@ -37,13 +69,13 @@ class Controller {
     public static function CreateView($viewName) {
 		require_once("./Views/Header_V.php");
 		require_once("./Views/Bandeau_V.php");
-		if (!isset($_COOKIE['PAID_']))
-		{
-			require_once("./Views/Bandeau2DC_V.php");
-		}
 		if (isset($_COOKIE['PAID_']))
 		{
-			require_once("./Views/Bandeau2C_V.php");
+			require_once("./Views/Bandeau2CAdmin_V.php");
+		}
+		else
+		{
+			require_once("./Views/Bandeau2DC_V.php");
 		}
         static::doSomething();
         require_once("./Views/$viewName.php");
