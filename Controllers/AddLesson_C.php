@@ -13,7 +13,7 @@ class AddLesson_C extends Controller {
             $salle = $_POST['salle'];
 			$typecours = $_POST['type_cours'];
 			AddLesson_M::addLesson($matiere, $date, $heure, $professeur, $salle, $typecours);
-			echo "<h3>Cours ajouté.</h3>";
+			echo "<div class='alert alert-success alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Succès!</strong> Cours ajouté</div>";
         }
     }
 	
